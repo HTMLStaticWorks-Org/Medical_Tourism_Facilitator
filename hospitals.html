@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Partner Hospitals Directory | Aurelia Global Health</title>
+  <meta name="description" content="Explore our international healthcare directory featuring editable sample partner hospital profiles across Europe, Asia-Pacific, and the Middle East.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Mandatory Sticky Navbar -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo" aria-label="Aurelia Global Health Home">
+        <div class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L4 7v10l8 5 8-5V7l-8-5z" stroke-linejoin="round"/>
+            <path d="M12 8v8M8 12h8" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">Aurelia Global Health</span>
+          <span class="brand-sub">Medical Travel Facilitator</span>
+        </div>
+      </a>
+
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-menu" id="primary-nav-menu">
+          <li class="nav-item has-dropdown">
+            <button type="button" class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+              Home
+              <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="dropdown-menu" role="menu">
+              <a href="index.html" class="dropdown-link" role="menuitem">
+                <span class="dropdown-link-title">Home 1 — Global Flagship</span>
+                <span class="dropdown-link-desc">Classic international patient coordination showcase</span>
+              </a>
+              <a href="home-2.html" class="dropdown-link" role="menuitem">
+                <span class="dropdown-link-title">Home 2 — Editorial Network</span>
+                <span class="dropdown-link-desc">Editorial hospital showcase &amp; interactive pathway finder</span>
+              </a>
+            </div>
+          </li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="treatments.html" class="nav-link">Treatments</a></li>
+          <li class="nav-item"><a href="hospitals.html" class="nav-link active">Partner Hospitals</a></li>
+          <li class="nav-item"><a href="process.html" class="nav-link">Process</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+          <li class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+
+          <!-- Mobile Menu Actions (Shown on Mobile & Tab Views) -->
+          <li class="mobile-menu-actions">
+            <div class="mobile-menu-toggles">
+              <button type="button" class="theme-toggle" aria-label="Switch theme" title="Toggle Light/Dark Theme">
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="5"/>
+                  <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke-linecap="round"/>
+                </svg>
+              </button>
+              <button type="button" class="rtl-toggle" aria-label="Toggle text direction" title="Toggle RTL/LTR Direction">RTL</button>
+            </div>
+            <a href="signup.html" class="btn btn-primary btn-full">Sign Up</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Theme & RTL Buttons on the left side of Sign Up -->
+        <button type="button" class="theme-toggle" aria-label="Switch theme" title="Toggle Light/Dark Theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke-linecap="round"/>
+          </svg>
+        </button>
+
+        <button type="button" class="rtl-toggle" aria-label="Toggle text direction" title="Toggle RTL/LTR Direction">RTL</button>
+
+        <a href="signup.html" class="btn btn-primary btn-sm nav-signup-btn">Sign Up</a>
+
+        <button type="button" class="mobile-menu-toggle" aria-expanded="false" aria-controls="primary-nav-menu" aria-label="Toggle navigation menu">
+          <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12h18M3 6h18M3 18h18" stroke-linecap="round"/>
+          </svg>
+          <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 6L6 18M6 6l12 12" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container page-hero-inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span>/</span>
+          <span aria-current="page">Partner Hospitals Directory</span>
+        </nav>
+        <h1>International Partner Hospital Network <span class="serif-accent">(Sample Directory)</span></h1>
+        <p>
+          Explore our demonstration hospital network across Europe, Asia-Pacific, and the Middle East. Filter by destination country or clinical specialty to review available international patient services and coordination pathways.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <!-- Buyer & Demonstration Transparency Banner -->
+        <div class="compliance-banner">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01" stroke-linecap="round"/>
+          </svg>
+          <div class="compliance-banner-text">
+            <strong>Editable Demonstration Profiles:</strong> All hospitals listed on this page are fictional sample profiles created for template demonstration. No real-world partnerships, accreditations, rankings, or certifications are claimed. Template buyers can easily replace these entries in <code>assets/js/data.js</code> with verified partner hospital details.
+          </div>
+        </div>
+
+        <!-- Country & Specialty Filtering Interface -->
+        <div class="filter-panel" aria-label="Filter partner hospitals">
+          <div class="filter-controls-grid">
+            <div class="form-group" style="margin-bottom: 0;">
+              <label for="hospital-search" class="form-label">Search Hospital, City, or Keyword</label>
+              <input type="search" id="hospital-search" class="form-control" placeholder="e.g., Singapore, Munich, Cardiology, Rehabilitation...">
+            </div>
+
+            <div class="form-group" style="margin-bottom: 0;">
+              <label for="hospital-country-filter" class="form-label">Filter by Country</label>
+              <select id="hospital-country-filter" class="form-control">
+                <option value="all">All Countries (8)</option>
+                <option value="Singapore">Singapore</option>
+                <option value="Germany">Germany</option>
+                <option value="Thailand">Thailand</option>
+                <option value="South Korea">South Korea</option>
+                <option value="Turkey">Turkey</option>
+                <option value="Spain">Spain</option>
+                <option value="United Arab Emirates">United Arab Emirates</option>
+                <option value="Japan">Japan</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 0;">
+              <label for="hospital-specialty-filter" class="form-label">Filter by Specialty</label>
+              <select id="hospital-specialty-filter" class="form-control">
+                <option value="all">All Medical Specialties</option>
+                <option value="Cardiology">Cardiology</option>
+                <option value="Orthopedics and Joint Replacement">Orthopedics &amp; Joint Replacement</option>
+                <option value="Oncology">Oncology</option>
+                <option value="Neurology">Neurology</option>
+                <option value="Fertility and IVF">Fertility &amp; IVF</option>
+                <option value="Cosmetic and Plastic Surgery">Cosmetic &amp; Plastic Surgery</option>
+                <option value="Dental Treatments">Dental Treatments</option>
+                <option value="Organ Transplant Information">Organ Transplant Information</option>
+                <option value="Eye Care">Eye Care</option>
+                <option value="General and Specialized Surgery">General &amp; Specialized Surgery</option>
+              </select>
+            </div>
+
+            <div>
+              <button type="button" id="hospital-filter-reset" class="btn btn-secondary" style="height: 44px;">
+                Reset Filters
+              </button>
+            </div>
+          </div>
+
+          <div class="filter-pills" role="group" aria-label="Filter by global region">
+            <button type="button" class="filter-pill active" data-region-pill="all">All Global Regions (8)</button>
+            <button type="button" class="filter-pill" data-region-pill="Asia-Pacific">Asia-Pacific (Singapore, Bangkok, Seoul, Tokyo)</button>
+            <button type="button" class="filter-pill" data-region-pill="Europe">Europe (Munich, Madrid)</button>
+            <button type="button" class="filter-pill" data-region-pill="Europe & Middle East">Eurasia &amp; Middle East (Istanbul, Dubai)</button>
+          </div>
+        </div>
+
+        <div class="filter-results-bar">
+          <span id="hospital-results-count" style="font-weight: 600;">Showing 8 of 8 sample hospital profiles</span>
+          <span>Click <strong>View Hospital Details</strong> on any card for full international facilities &amp; language lists</span>
+        </div>
+
+        <!-- Hospital Directory Cards Grid (Pre-rendered for SEO & Accessibility + Live Filtered via main.js) -->
+        <div class="grid-2" id="hospitals-directory-grid">
+          <article class="card" data-hospital-id="meridian-singapore">
+            <div class="card-media">
+              <img src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?auto=format&fit=crop&w=1000&q=80" alt="Meridian International Medical Centre — Singapore, Singapore" loading="lazy">
+              <div class="card-badges">
+                <span class="badge badge-location">Singapore, Singapore</span>
+                <span class="badge badge-sample">Sample Partner Profile</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">Asia-Pacific &bull; International Patient Desk</div>
+              <h3 class="card-title">Meridian International Medical Centre</h3>
+              <p class="card-text">Fictional demonstration profile representing a multi-specialty tertiary medical center in Singapore with dedicated international patient coordination suites.</p>
+              <div class="tag-list">
+                <span class="tag">Cardiology</span>
+                <span class="tag">Oncology</span>
+                <span class="tag">Neurology</span>
+                <span class="tag">General and Specialized Surgery</span>
+              </div>
+              <ul class="procedure-list">
+                <li>International Patient Coordination Lounge</li>
+                <li>Multilingual Medical Interpretation Desk</li>
+                <li>Private Inpatient Recovery Suites</li>
+              </ul>
+              <div class="card-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-hospital-modal="meridian-singapore">View Hospital Details</button>
+                <a href="contact.html?destination=Singapore&amp;hospital=Meridian%20International%20Medical%20Centre" class="btn btn-primary btn-sm">Enquire</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-hospital-id="isaria-munich">
+            <div class="card-media">
+              <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1000&q=80" alt="Isaria Klinikum für Spezialmedizin — Munich, Germany" loading="lazy">
+              <div class="card-badges">
+                <span class="badge badge-location">Munich, Germany</span>
+                <span class="badge badge-sample">Sample Partner Profile</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">Europe &bull; International Patient Desk</div>
+              <h3 class="card-title">Isaria Klinikum für Spezialmedizin</h3>
+              <p class="card-text">Fictional demonstration profile showcasing a European specialized surgical and rehabilitation hospital focused on orthopedics, spine care, and neurology.</p>
+              <div class="tag-list">
+                <span class="tag">Orthopedics and Joint Replacement</span>
+                <span class="tag">Neurology</span>
+                <span class="tag">Cardiology</span>
+                <span class="tag">Oncology</span>
+              </div>
+              <ul class="procedure-list">
+                <li>Dedicated International Case Management Office</li>
+                <li>In-House Physical &amp; Mobility Rehabilitation Wing</li>
+                <li>Advanced MRI &amp; CT Diagnostic Imaging Suite</li>
+              </ul>
+              <div class="card-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-hospital-modal="isaria-munich">View Hospital Details</button>
+                <a href="contact.html?destination=Germany&amp;hospital=Isaria%20Klinikum%20f%C3%BCr%20Spezialmedizin" class="btn btn-primary btn-sm">Enquire</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-hospital-id="chao-phraya-bangkok">
+            <div class="card-media">
+              <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1000&q=80" alt="Chao Phraya Global Health Institute — Bangkok, Thailand" loading="lazy">
+              <div class="card-badges">
+                <span class="badge badge-location">Bangkok, Thailand</span>
+                <span class="badge badge-sample">Sample Partner Profile</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">Asia-Pacific &bull; International Patient Desk</div>
+              <h3 class="card-title">Chao Phraya Global Health Institute</h3>
+              <p class="card-text">Fictional demonstration profile illustrating a hospitality-integrated international hospital in Bangkok with comprehensive medical travel concierge desks.</p>
+              <div class="tag-list">
+                <span class="tag">Cosmetic and Plastic Surgery</span>
+                <span class="tag">Dental Treatments</span>
+                <span class="tag">Fertility and IVF</span>
+                <span class="tag">Orthopedics and Joint Replacement</span>
+              </div>
+              <ul class="procedure-list">
+                <li>24/7 International Patient Concierge Desk</li>
+                <li>Embassy &amp; Medical Visa Extension Assistance</li>
+                <li>Private Recovery Suites with Companion Seating</li>
+              </ul>
+              <div class="card-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-hospital-modal="chao-phraya-bangkok">View Hospital Details</button>
+                <a href="contact.html?destination=Thailand&amp;hospital=Chao%20Phraya%20Global%20Health%20Institute" class="btn btn-primary btn-sm">Enquire</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-hospital-id="hanbit-seoul">
+            <div class="card-media">
+              <img src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=1000&q=80" alt="Hanbit University Medical Plaza — Seoul, South Korea" loading="lazy">
+              <div class="card-badges">
+                <span class="badge badge-location">Seoul, South Korea</span>
+                <span class="badge badge-sample">Sample Partner Profile</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">Asia-Pacific &bull; International Patient Desk</div>
+              <h3 class="card-title">Hanbit University Medical Plaza</h3>
+              <p class="card-text">Fictional demonstration profile representing a modern high-technology medical center in Seoul specializing in surgical oncology, ophthalmology, and reconstructive care.</p>
+              <div class="tag-list">
+                <span class="tag">Oncology</span>
+                <span class="tag">Cosmetic and Plastic Surgery</span>
+                <span class="tag">Eye Care</span>
+                <span class="tag">General and Specialized Surgery</span>
+              </div>
+              <ul class="procedure-list">
+                <li>International Healthcare Center (IHC) Wing</li>
+                <li>Minimally Invasive &amp; Robotic Surgery Suites</li>
+                <li>Comprehensive Ophthalmology &amp; Retinal Center</li>
+              </ul>
+              <div class="card-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-hospital-modal="hanbit-seoul">View Hospital Details</button>
+                <a href="contact.html?destination=South%20Korea&amp;hospital=Hanbit%20University%20Medical%20Plaza" class="btn btn-primary btn-sm">Enquire</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-hospital-id="bosphorus-istanbul">
+            <div class="card-media">
+              <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1000&q=80" alt="Bosphorus Medipark International Hospital — Istanbul, Turkey" loading="lazy">
+              <div class="card-badges">
+                <span class="badge badge-location">Istanbul, Turkey</span>
+                <span class="badge badge-sample">Sample Partner Profile</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">Europe &amp; Middle East &bull; International Patient Desk</div>
+              <h3 class="card-title">Bosphorus Medipark International Hospital</h3>
+              <p class="card-text">Fictional demonstration profile highlighting a regional crossroads medical campus in Istanbul serving patients across Europe, Central Asia, and the Middle East.</p>
+              <div class="tag-list">
+                <span class="tag">Organ Transplant Information</span>
+                <span class="tag">Cardiology</span>
+                <span class="tag">Dental Treatments</span>
+                <span class="tag">Eye Care</span>
+              </div>
+              <ul class="procedure-list">
+                <li>International Patient Relations Directorate</li>
+                <li>Ethics &amp; Transplant Documentation Liaison Office</li>
+                <li>VIP Airport Meet-and-Greet Transfer Service</li>
+              </ul>
+              <div class="card-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-hospital-modal="bosphorus-istanbul">View Hospital Details</button>
+                <a href="contact.html?destination=Turkey&amp;hospital=Bosphorus%20Medipark%20International%20Hospital" class="btn btn-primary btn-sm">Enquire</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-hospital-id="castellana-madrid">
+            <div class="card-media">
+              <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1000&q=80" alt="Centro Médico Castellana Internacional — Madrid, Spain" loading="lazy">
+              <div class="card-badges">
+                <span class="badge badge-location">Madrid, Spain</span>
+                <span class="badge badge-sample">Sample Partner Profile</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">Europe &bull; International Patient Desk</div>
+              <h3 class="card-title">Centro Médico Castellana Internacional</h3>
+              <p class="card-text">Fictional demonstration profile representing a European reproductive medicine, ophthalmology, and orthopedic surgical center in Madrid.</p>
+              <div class="tag-list">
+                <span class="tag">Fertility and IVF</span>
+                <span class="tag">Orthopedics and Joint Replacement</span>
+                <span class="tag">Eye Care</span>
+                <span class="tag">Neurology</span>
+              </div>
+              <ul class="procedure-list">
+                <li>Reproductive Medicine &amp; Embryology Laboratories</li>
+                <li>Bilingual Patient Care Navigators</li>
+                <li>Outpatient Day-Surgery &amp; Recovery Suites</li>
+              </ul>
+              <div class="card-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-hospital-modal="castellana-madrid">View Hospital Details</button>
+                <a href="contact.html?destination=Spain&amp;hospital=Centro%20M%C3%A9dico%20Castellana%20Internacional" class="btn btn-primary btn-sm">Enquire</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-hospital-id="khor-dubai">
+            <div class="card-media">
+              <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=1000&q=80" alt="Al-Khor Creek Specialty Hospital — Dubai, UAE" loading="lazy">
+              <div class="card-badges">
+                <span class="badge badge-location">Dubai, United Arab Emirates</span>
+                <span class="badge badge-sample">Sample Partner Profile</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">Europe &amp; Middle East &bull; International Patient Desk</div>
+              <h3 class="card-title">Al-Khor Creek Specialty Hospital</h3>
+              <p class="card-text">Fictional demonstration profile representing a modern Middle Eastern specialty hospital with executive inpatient suites and international family support.</p>
+              <div class="tag-list">
+                <span class="tag">Cardiology</span>
+                <span class="tag">Orthopedics and Joint Replacement</span>
+                <span class="tag">General and Specialized Surgery</span>
+                <span class="tag">Fertility and IVF</span>
+              </div>
+              <ul class="procedure-list">
+                <li>International Protocol &amp; Family Liaison Desk</li>
+                <li>Executive &amp; Family Inpatient Suites</li>
+                <li>Medical Visa Sponsorship Coordination</li>
+              </ul>
+              <div class="card-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-hospital-modal="khor-dubai">View Hospital Details</button>
+                <a href="contact.html?destination=United%20Arab%20Emirates&amp;hospital=Al-Khor%20Creek%20Specialty%20Hospital" class="btn btn-primary btn-sm">Enquire</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-hospital-id="azabu-tokyo">
+            <div class="card-media">
+              <img src="https://images.unsplash.com/photo-1504439468489-c8920d796a29?auto=format&fit=crop&w=1000&q=80" alt="Azabu Daiichi Medical Center — Tokyo, Japan" loading="lazy">
+              <div class="card-badges">
+                <span class="badge badge-location">Tokyo, Japan</span>
+                <span class="badge badge-sample">Sample Partner Profile</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">Asia-Pacific &bull; International Patient Desk</div>
+              <h3 class="card-title">Azabu Daiichi Medical Center</h3>
+              <p class="card-text">Fictional demonstration profile illustrating a precision diagnostic, oncology, and neurological care center in Tokyo with structured international referrals.</p>
+              <div class="tag-list">
+                <span class="tag">Oncology</span>
+                <span class="tag">Neurology</span>
+                <span class="tag">Cardiology</span>
+                <span class="tag">Organ Transplant Information</span>
+              </div>
+              <ul class="procedure-list">
+                <li>International Medical Coordination Department</li>
+                <li>Precision Diagnostic Imaging &amp; Oncology Unit</li>
+                <li>Certified Clinical Interpretation Services</li>
+              </ul>
+              <div class="card-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-hospital-modal="azabu-tokyo">View Hospital Details</button>
+                <a href="contact.html?destination=Japan&amp;hospital=Azabu%20Daiichi%20Medical%20Center" class="btn btn-primary btn-sm">Enquire</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Template Customization Guide Callout for Buyers -->
+    <section class="section section-surface">
+      <div class="container">
+        <div class="grid-2" style="align-items: center; gap: var(--space-10);">
+          <div>
+            <span class="eyebrow eyebrow-champagne">For Template Buyers &amp; Agencies</span>
+            <h2>Structured for Effortless Customization with Verified Partners</h2>
+            <p class="lead" style="margin-top: var(--space-3); margin-bottom: var(--space-4);">
+              Every hospital card and detail modal in this template reads from a clean, centralized data schema in <code>assets/js/data.js</code>.
+            </p>
+            <p style="color: var(--text-secondary); font-size: 0.94rem;">
+              Simply update the hospital name, country, city, specialty array, verified facility overview, and image path in one file—your changes automatically populate the directory filter, modal drawer, and contact form query parameters.
+            </p>
+          </div>
+          <div class="cta-banner" style="grid-template-columns: 1fr; padding: var(--space-8);">
+            <div>
+              <span class="eyebrow eyebrow-light">Need Assistance Selecting a Facility?</span>
+              <h3 style="color: #FFFFFF; font-size: 1.5rem; margin-bottom: var(--space-2);">Request a Personalized Hospital Introduction</h3>
+              <p style="font-size: 0.95rem; margin-bottom: var(--space-5);">
+                Our coordinators help you compare international patient facilities, language support, and evaluation requirements across multiple destinations.
+              </p>
+              <a href="contact.html" class="btn btn-champagne">Contact International Patient Desk</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Professional Multi-Column Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="brand-logo" style="margin-bottom: var(--space-4);">
+            <div class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L4 7v10l8 5 8-5V7l-8-5z" stroke-linejoin="round"/>
+                <path d="M12 8v8M8 12h8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="brand-text">
+              <span class="brand-name" style="color: var(--text-footer-heading);">Aurelia Global Health</span>
+              <span class="brand-sub" style="color: var(--accent-primary);">Medical Travel Facilitator</span>
+            </div>
+          </a>
+          <p style="font-size: 0.9rem; color: var(--text-footer-muted); margin-bottom: var(--space-4); max-width: 340px;">
+            Connecting international patients with specialist hospitals and coordinating transparent, compassionate medical travel logistics worldwide.
+          </p>
+          <div style="font-size: 0.82rem; color: var(--text-footer-muted);">
+            <strong style="color: var(--text-footer-heading);">International Coordination Desk (Sample):</strong><br>
+            Rue du Rhône 42, 1204 Geneva, Switzerland<br>
+            enquiries@aureliaglobalhealth.example
+          </div>
+          <!-- Social Icons with Hover States -->
+          <div class="footer-socials" aria-label="Follow us on social media">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn" title="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect x="2" y="9" width="4" height="12"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+            </a>
+            <a href="https://wa.me/41225180900" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="WhatsApp" title="WhatsApp Direct Desk">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+              </svg>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="YouTube" title="YouTube Hospital Tours">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
+              </svg>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="X / Twitter" title="X (Twitter)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+              </svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Facebook" title="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Instagram" title="Instagram">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Navigation</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home 1 — Global Flagship</a></li>
+            <li><a href="home-2.html">Home 2 — Editorial Network</a></li>
+            <li><a href="about.html">About Our Facilitation</a></li>
+            <li><a href="treatments.html">Treatments Directory</a></li>
+            <li><a href="hospitals.html">Partner Hospitals</a></li>
+            <li><a href="process.html">Patient Journey Process</a></li>
+            <li><a href="contact.html">International Enquiry</a></li>
+            <li><a href="dashboard.html">Patient Dashboard</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Treatment Categories</h3>
+          <ul class="footer-links">
+            <li><a href="treatments.html?category=cardiology">Cardiology &amp; Heart Care</a></li>
+            <li><a href="treatments.html?category=orthopedics">Orthopedics &amp; Joint Replacement</a></li>
+            <li><a href="treatments.html?category=oncology">Oncology Care</a></li>
+            <li><a href="treatments.html?category=neurology">Neurology &amp; Neurosurgery</a></li>
+            <li><a href="treatments.html?category=fertility-ivf">Fertility &amp; IVF</a></li>
+            <li><a href="treatments.html?category=dental">Dental Rehabilitation</a></li>
+            <li><a href="treatments.html?category=eye-care">Eye Care &amp; Ophthalmology</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Patient Access &amp; Support</h3>
+          <ul class="footer-links">
+            <li><a href="login.html">Patient Portal Login (UI Demo)</a></li>
+            <li><a href="signup.html">Create Enquiry Profile (UI Demo)</a></li>
+            <li><a href="process.html#role-distinction">Facilitator vs. Hospital Role</a></li>
+            <li><a href="contact.html#secure-records">Secure Medical Record Policy</a></li>
+            <li><a href="contact.html">WhatsApp Coordination Desk</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-disclaimer">
+        <strong>Important Medical &amp; Template Disclaimer:</strong> Aurelia Global Health is a medical travel facilitation template and does not provide medical advice, diagnosis, or clinical treatment. All medical information on this website is general and educational in nature and does not guarantee outcomes or suitability for individual patients. All hospital profiles, testimonials, and team bios included in this template are clearly labelled fictional demonstration data for ThemeForest / Creative Market preview purposes.
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Aurelia Global Health. Premium Medical Tourism Facilitator Website Template.</span>
+        <div style="display: flex; gap: var(--space-4);">
+          <a href="about.html">Transparency Commitment</a>
+          <a href="process.html">Patient Privacy</a>
+          <a href="contact.html">Contact Desk</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+

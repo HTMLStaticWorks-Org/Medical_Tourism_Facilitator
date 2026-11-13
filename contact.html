@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>International Patient Enquiry &amp; Contact | Aurelia Global Health</title>
+  <meta name="description"
+    content="Submit an international patient treatment coordination enquiry, connect via WhatsApp, or contact our regional coordination desks in Geneva, Singapore, and London.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Mandatory Sticky Navbar -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo" aria-label="Aurelia Global Health Home">
+        <div class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L4 7v10l8 5 8-5V7l-8-5z" stroke-linejoin="round" />
+            <path d="M12 8v8M8 12h8" stroke-linecap="round" />
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">Aurelia Global Health</span>
+          <span class="brand-sub">Medical Travel Facilitator</span>
+        </div>
+      </a>
+
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-menu" id="primary-nav-menu">
+          <li class="nav-item has-dropdown">
+            <button type="button" class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+              Home
+              <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+            <div class="dropdown-menu" role="menu">
+              <a href="index.html" class="dropdown-link" role="menuitem">
+                <span class="dropdown-link-title">Home 1 — Global Flagship</span>
+                <span class="dropdown-link-desc">Classic international patient coordination showcase</span>
+              </a>
+              <a href="home-2.html" class="dropdown-link" role="menuitem">
+                <span class="dropdown-link-title">Home 2 — Editorial Network</span>
+                <span class="dropdown-link-desc">Editorial hospital showcase &amp; interactive pathway finder</span>
+              </a>
+            </div>
+          </li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="treatments.html" class="nav-link">Treatments</a></li>
+          <li class="nav-item"><a href="hospitals.html" class="nav-link">Partner Hospitals</a></li>
+          <li class="nav-item"><a href="process.html" class="nav-link">Process</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></li>
+          <li class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+
+          <!-- Mobile Menu Actions (Shown on Mobile & Tab Views) -->
+          <li class="mobile-menu-actions">
+            <div class="mobile-menu-toggles">
+              <button type="button" class="theme-toggle" aria-label="Switch theme" title="Toggle Light/Dark Theme">
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="5"/>
+                  <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke-linecap="round"/>
+                </svg>
+              </button>
+              <button type="button" class="rtl-toggle" aria-label="Toggle text direction" title="Toggle RTL/LTR Direction">RTL</button>
+            </div>
+            <a href="signup.html" class="btn btn-primary btn-full">Sign Up</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Theme & RTL Buttons on the left side of Sign Up -->
+        <button type="button" class="theme-toggle" aria-label="Switch theme" title="Toggle Light/Dark Theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke-linecap="round"/>
+          </svg>
+        </button>
+
+        <button type="button" class="rtl-toggle" aria-label="Toggle text direction" title="Toggle RTL/LTR Direction">RTL</button>
+
+        <a href="signup.html" class="btn btn-primary btn-sm nav-signup-btn">Sign Up</a>
+
+        <button type="button" class="mobile-menu-toggle" aria-expanded="false" aria-controls="primary-nav-menu" aria-label="Toggle navigation menu">
+          <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12h18M3 6h18M3 18h18" stroke-linecap="round"/>
+          </svg>
+          <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 6L6 18M6 6l12 12" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container page-hero-inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span>/</span>
+          <span aria-current="page">Contact &amp; International Patient Enquiry</span>
+        </nav>
+        <h1>International Patient Enquiry &amp; Coordination Desk</h1>
+        <p>
+          Submit your preliminary treatment enquiry below or reach our international patient coordinators via phone,
+          email, or WhatsApp. We respond promptly with clear information on hospital evaluation pathways.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <!-- Prominent Medical Records Privacy Notice -->
+        <div class="compliance-banner" id="secure-records">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <div class="compliance-banner-text">
+            <strong>Important Medical Document Privacy Notice:</strong> Do not enter sensitive personal medical records,
+            diagnostic ID numbers, or clinical file attachments in this general contact form. Sensitive medical
+            documents and imaging should only be shared through an appropriate, encrypted hospital transfer channel
+            provided by your coordinator after initial verification.
+          </div>
+        </div>
+
+        <!-- Pre-fill Notification if navigated from a Hospital or Treatment Card -->
+        <div class="compliance-banner" id="enquiry-prefill-notice"
+          style="display: none; background-color: var(--bg-subtle-teal); border-color: var(--accent-primary);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            style="color: var(--accent-primary);">
+            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <div class="compliance-banner-text prefill-text" style="color: var(--text-primary); font-weight: 500;">
+            Your enquiry selection has been pre-populated below.
+          </div>
+        </div>
+
+        <div class="grid-2"
+          style="grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.85fr); align-items: start; gap: var(--space-10);">
+          <!-- Left: International Patient Enquiry Form -->
+          <div class="card" style="padding: var(--space-8);">
+            <span class="eyebrow" style="align-self: flex-start;">Preliminary Coordination Request</span>
+            <h2 style="font-size: 1.65rem; margin-bottom: var(--space-2);">Submit an International Patient Enquiry</h2>
+            <p style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: var(--space-6);">
+              Fields marked with <span class="required-star">*</span> are required. This form initiates a non-clinical
+              coordination consultation.
+            </p>
+
+            <form id="patient-enquiry-form" novalidate>
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="enq-name" class="form-label">Full Name <span class="required-star">*</span></label>
+                  <input type="text" id="enq-name" name="fullName" class="form-control"
+                    placeholder="e.g., Elena Rostova" required>
+                  <span class="form-error">Please enter your full name.</span>
+                </div>
+
+                <div class="form-group">
+                  <label for="enq-email" class="form-label">Email Address <span class="required-star">*</span></label>
+                  <input type="email" id="enq-email" name="email" class="form-control" placeholder="name@example.com"
+                    required>
+                  <span class="form-error">Please enter a valid email address.</span>
+                </div>
+              </div>
+
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="enq-phone" class="form-label">Phone Number (with Country Code) <span
+                      class="required-star">*</span></label>
+                  <input type="tel" id="enq-phone" name="phone" class="form-control"
+                    placeholder="e.g., +44 20 7946 0192" required>
+                  <span class="form-error">Please enter a valid phone number with country code.</span>
+                </div>
+
+                <div class="form-group">
+                  <label for="enq-residence" class="form-label">Country of Residence <span
+                      class="required-star">*</span></label>
+                  <input type="text" id="enq-residence" name="residence" class="form-control"
+                    placeholder="e.g., United Kingdom, Canada, UAE..." required>
+                  <span class="form-error">Please enter your country of residence.</span>
+                </div>
+              </div>
+
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="enq-treatment" class="form-label">Treatment of Interest <span
+                      class="required-star">*</span></label>
+                  <select id="enq-treatment" name="treatment" class="form-control" required>
+                    <option value="">Select a medical category...</option>
+                    <option value="Cardiology">Cardiology &amp; Cardiovascular Care</option>
+                    <option value="Orthopedics and Joint Replacement">Orthopedics &amp; Joint Replacement</option>
+                    <option value="Oncology">Oncology &amp; Second Opinion Review</option>
+                    <option value="Neurology">Neurology &amp; Neurosurgery</option>
+                    <option value="Fertility and IVF">Fertility &amp; IVF</option>
+                    <option value="Cosmetic and Plastic Surgery">Cosmetic &amp; Plastic Surgery</option>
+                    <option value="Dental Treatments">Dental Treatments &amp; Oral Rehabilitation</option>
+                    <option value="Organ Transplant Information">Organ Transplant Information</option>
+                    <option value="Eye Care">Eye Care &amp; Ophthalmology</option>
+                    <option value="General and Specialized Surgery">General &amp; Specialized Surgery</option>
+                    <option value="General Multi-Specialty Guidance">Unsure / Seeking Multi-Specialty Guidance</option>
+                  </select>
+                  <span class="form-error">Please select a treatment category of interest.</span>
+                </div>
+
+                <div class="form-group">
+                  <label for="enq-destination" class="form-label">Preferred Destination</label>
+                  <select id="enq-destination" name="destination" class="form-control">
+                    <option value="Flexible / Open to Recommendations">Flexible / Open to Recommendations</option>
+                    <option value="Singapore">Singapore</option>
+                    <option value="Germany">Germany (Munich)</option>
+                    <option value="Thailand">Thailand (Bangkok)</option>
+                    <option value="South Korea">South Korea (Seoul)</option>
+                    <option value="Turkey">Turkey (Istanbul)</option>
+                    <option value="Spain">Spain (Madrid)</option>
+                    <option value="United Arab Emirates">United Arab Emirates (Dubai)</option>
+                    <option value="Japan">Japan (Tokyo)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <span class="form-label">Preferred Contact Method</span>
+                <div style="display: flex; flex-wrap: wrap; gap: var(--space-4); padding-top: 4px;">
+                  <label class="form-check">
+                    <input type="radio" name="contactMethod" value="Email" checked>
+                    <span>Email</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="radio" name="contactMethod" value="Phone Call">
+                    <span>Phone Call</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="radio" name="contactMethod" value="WhatsApp Message">
+                    <span>WhatsApp</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="radio" name="contactMethod" value="Video Briefing">
+                    <span>Video Briefing</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="enq-message" class="form-label">General Enquiry &amp; Coordination Questions <span
+                    class="required-star">*</span></label>
+                <textarea id="enq-message" name="message" rows="4" class="form-control"
+                  placeholder="Share your general timeframe, preferred language for consultations, or questions about hospital evaluation logistics (please do not paste confidential medical records here)..."
+                  required></textarea>
+                <span class="form-error">Please provide a brief summary of your coordination enquiry (at least 10
+                  characters).</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-check">
+                  <input type="checkbox" name="consent" required>
+                  <span>
+                    I understand that Aurelia Global Health is a non-clinical medical travel facilitator, that sensitive
+                    medical records will be shared separately through a secure channel, and I consent to being contacted
+                    regarding my enquiry. <span class="required-star">*</span>
+                  </span>
+                </label>
+                <span class="form-error">Please confirm that you understand the facilitator role and privacy
+                  notice.</span>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-lg btn-full" style="margin-top: var(--space-2);">
+                Submit International Patient Enquiry
+              </button>
+
+              <div id="contact-form-feedback" class="form-feedback" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+
+          <!-- Right: Direct Contact Details, WhatsApp CTA & Regional Offices -->
+          <div style="display: flex; flex-direction: column; gap: var(--space-6);">
+            <!-- WhatsApp Contact CTA Card -->
+            <div class="card"
+              style="padding: var(--space-6); background: linear-gradient(135deg, #0B192C 0%, #133337 100%); color: #FFFFFF; border-color: rgba(197, 168, 128, 0.3);">
+              <span class="badge badge-sample" style="align-self: flex-start; margin-bottom: var(--space-3);">Instant
+                Messaging Desk</span>
+              <h3 style="color: #FFFFFF; margin-bottom: var(--space-2);">WhatsApp International Patient Desk</h3>
+              <p style="font-size: 0.9rem; color: #CBD5E1; margin-bottom: var(--space-5);">
+                Have a quick question about destination options, travel timelines, or language support? Message our
+                coordination desk directly on WhatsApp.
+              </p>
+              <a href="https://wa.me/41225180900?text=Hello%20Aurelia%20Global%20Health%2C%20I%20would%20like%20to%20enquire%20about%20international%20hospital%20coordination."
+                target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-full">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                Chat via WhatsApp (+41 22 518 0900)
+              </a>
+              <span style="font-size: 0.75rem; color: #94A3B8; margin-top: var(--space-3); text-align: center;">
+                For general logistics only &bull; Do not send medical files via WhatsApp
+              </span>
+            </div>
+
+            <!-- Direct Contact Details Card -->
+            <div class="card" style="padding: var(--space-6);">
+              <h3 style="margin-bottom: var(--space-4);">Direct Contact Channels <span
+                  style="font-size: 0.8rem; font-weight: 500; color: var(--text-muted);">(Sample Details)</span></h3>
+              <div style="display: grid; gap: var(--space-4); font-size: 0.92rem;">
+                <div>
+                  <strong
+                    style="display: block; color: var(--accent-primary); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em;">International
+                    Telephone Desk</strong>
+                  <span>+41 22 518 0900 (Europe &amp; Global)</span><br>
+                  <span>+65 3158 4200 (Asia-Pacific Desk)</span>
+                </div>
+                <div>
+                  <strong
+                    style="display: block; color: var(--accent-primary); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em;">Enquiry
+                    Email</strong>
+                  <span>enquiries@aureliaglobalhealth.example</span>
+                </div>
+                <div>
+                  <strong
+                    style="display: block; color: var(--accent-primary); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em;">Coordination
+                    Desk Hours</strong>
+                  <span>Monday – Saturday: 07:00 – 21:00 CET</span><br>
+                  <span style="font-size: 0.82rem; color: var(--text-muted);">24/7 On-Ground Support Line for Active
+                    Travelling Patients</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Official Social Media Channels Card -->
+            <div class="card" style="padding: var(--space-6);">
+              <span class="badge badge-teal" style="align-self: flex-start; margin-bottom: var(--space-3);">Global
+                Channels</span>
+              <h3 style="margin-bottom: var(--space-2);">Official Social Networks</h3>
+              <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: var(--space-4);">
+                Follow our official verified channels for hospital tour videos, international patient briefings, travel
+                visa updates, and healthcare advisories.
+              </p>
+              <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3);">
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="btn-social"
+                  style="width: 100%; justify-content: flex-start;" title="LinkedIn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                    <rect x="2" y="9" width="4" height="12" />
+                    <circle cx="4" cy="4" r="2" />
+                  </svg>
+                  <span>LinkedIn</span>
+                </a>
+                <a href="https://wa.me/41225180900" target="_blank" rel="noopener noreferrer" class="btn-social"
+                  style="width: 100%; justify-content: flex-start;" title="WhatsApp">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                      d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                  </svg>
+                  <span>WhatsApp</span>
+                </a>
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="btn-social"
+                  style="width: 100%; justify-content: flex-start;" title="YouTube">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                      d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
+                    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
+                  </svg>
+                  <span>YouTube</span>
+                </a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="btn-social"
+                  style="width: 100%; justify-content: flex-start;" title="X (Twitter)">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                      d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+                  </svg>
+                  <span>X / Twitter</span>
+                </a>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="btn-social"
+                  style="width: 100%; justify-content: flex-start;" title="Facebook">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                  </svg>
+                  <span>Facebook</span>
+                </a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="btn-social"
+                  style="width: 100%; justify-content: flex-start;" title="Instagram">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                  </svg>
+                  <span>Instagram</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Office Address & Interactive Map -->
+            <div class="card" style="overflow: hidden;">
+              <div style="padding: var(--space-6);">
+                <span class="badge badge-sample" style="margin-bottom: var(--space-2);">Sample Office Location</span>
+                <h3 style="margin-bottom: var(--space-2);">Global Coordination Headquarters</h3>
+                <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: var(--space-2);">
+                  Rue du Rhône 42, Floor 4 &bull; 1204 Geneva, Switzerland
+                </p>
+                <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: var(--space-4);">
+                  Liaison Desks: Marina Bay, Singapore &bull; Marylebone, London, UK
+                </p>
+                <div class="contact-map-actions">
+                  <a href="https://maps.google.com/?q=Rue+du+Rhone+42+1204+Geneva+Switzerland" target="_blank"
+                    rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+                      style="margin-right: 4px;">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                      <circle cx="12" cy="10" r="3" />
+                    </svg>
+                    Open in Google Maps
+                  </a>
+                  <a href="#primary-enquiry-form" class="btn btn-primary btn-sm">
+                    Book In-Person Appointment
+                  </a>
+                </div>
+              </div>
+              <!-- Embedded Interactive OpenStreetMap Component -->
+              <div
+                style="position: relative; border-top: 1px solid var(--border-subtle); background-color: var(--color-navy-900);">
+                <iframe title="Aurelia Global Health Geneva Headquarters Location Map"
+                  src="https://www.openstreetmap.org/export/embed.html?bbox=6.1400%2C46.2020%2C6.1480%2C46.2070&amp;layer=mapnik&amp;marker=46.2044%2C6.1432"
+                  style="width: 100%; height: 260px; border: 0; display: block;" loading="lazy">
+                </iframe>
+                <div
+                  style="padding: var(--space-3) var(--space-6); background-color: var(--bg-surface-alt); border-top: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: space-between; font-size: 0.78rem; color: var(--text-muted);">
+                  <span>Geneva HQ (46.2044° N, 6.1432° E) &bull; Lakefront Financial &amp; Medical District</span>
+                  <a href="https://www.openstreetmap.org/?mlat=46.2044&amp;mlon=6.1432#map=16/46.2044/6.1432"
+                    target="_blank" rel="noopener noreferrer"
+                    style="color: var(--accent-primary); font-weight: 600;">View Larger Map &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Professional Multi-Column Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="brand-logo" style="margin-bottom: var(--space-4);">
+            <div class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L4 7v10l8 5 8-5V7l-8-5z" stroke-linejoin="round" />
+                <path d="M12 8v8M8 12h8" stroke-linecap="round" />
+              </svg>
+            </div>
+            <div class="brand-text">
+              <span class="brand-name" style="color: var(--text-footer-heading);">Aurelia Global Health</span>
+              <span class="brand-sub" style="color: var(--accent-primary);">Medical Travel Facilitator</span>
+            </div>
+          </a>
+          <p
+            style="font-size: 0.9rem; color: var(--text-footer-muted); margin-bottom: var(--space-4); max-width: 340px;">
+            Connecting international patients with specialist hospitals and coordinating transparent, compassionate
+            medical travel logistics worldwide.
+          </p>
+          <div style="font-size: 0.82rem; color: var(--text-footer-muted);">
+            <strong style="color: var(--text-footer-heading);">International Coordination Desk (Sample):</strong><br>
+            Rue du Rhône 42, 1204 Geneva, Switzerland<br>
+            enquiries@aureliaglobalhealth.example
+          </div>
+          <!-- Social Icons with Hover States -->
+          <div class="footer-socials" aria-label="Follow us on social media">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-social-link"
+              aria-label="LinkedIn" title="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+            <a href="https://wa.me/41225180900" target="_blank" rel="noopener noreferrer" class="footer-social-link"
+              aria-label="WhatsApp" title="WhatsApp Direct Desk">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+              </svg>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-link"
+              aria-label="YouTube" title="YouTube Hospital Tours">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
+              </svg>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="footer-social-link"
+              aria-label="X / Twitter" title="X (Twitter)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+              </svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-link"
+              aria-label="Facebook" title="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-link"
+              aria-label="Instagram" title="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Navigation</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home 1 — Global Flagship</a></li>
+            <li><a href="home-2.html">Home 2 — Editorial Network</a></li>
+            <li><a href="about.html">About Our Facilitation</a></li>
+            <li><a href="treatments.html">Treatments Directory</a></li>
+            <li><a href="hospitals.html">Partner Hospitals</a></li>
+            <li><a href="process.html">Patient Journey Process</a></li>
+            <li><a href="contact.html">International Enquiry</a></li>
+            <li><a href="dashboard.html">Patient Dashboard</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Treatment Categories</h3>
+          <ul class="footer-links">
+            <li><a href="treatments.html?category=cardiology">Cardiology &amp; Heart Care</a></li>
+            <li><a href="treatments.html?category=orthopedics">Orthopedics &amp; Joint Replacement</a></li>
+            <li><a href="treatments.html?category=oncology">Oncology Care</a></li>
+            <li><a href="treatments.html?category=neurology">Neurology &amp; Neurosurgery</a></li>
+            <li><a href="treatments.html?category=fertility-ivf">Fertility &amp; IVF</a></li>
+            <li><a href="treatments.html?category=dental">Dental Rehabilitation</a></li>
+            <li><a href="treatments.html?category=eye-care">Eye Care &amp; Ophthalmology</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Patient Access &amp; Support</h3>
+          <ul class="footer-links">
+            <li><a href="login.html">Patient Portal Login (UI Demo)</a></li>
+            <li><a href="signup.html">Create Enquiry Profile (UI Demo)</a></li>
+            <li><a href="process.html#role-distinction">Facilitator vs. Hospital Role</a></li>
+            <li><a href="contact.html#secure-records">Secure Medical Record Policy</a></li>
+            <li><a href="contact.html">WhatsApp Coordination Desk</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-disclaimer">
+        <strong>Important Medical &amp; Template Disclaimer:</strong> Aurelia Global Health is a medical travel
+        facilitation template and does not provide medical advice, diagnosis, or clinical treatment. All medical
+        information on this website is general and educational in nature and does not guarantee outcomes or suitability
+        for individual patients. All hospital profiles, testimonials, and team bios included in this template are
+        clearly labelled fictional demonstration data for ThemeForest / Creative Market preview purposes.
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Aurelia Global Health. Premium Medical Tourism Facilitator Website Template.</span>
+        <div style="display: flex; gap: var(--space-4);">
+          <a href="about.html">Transparency Commitment</a>
+          <a href="process.html">Patient Privacy</a>
+          <a href="contact.html">Contact Desk</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

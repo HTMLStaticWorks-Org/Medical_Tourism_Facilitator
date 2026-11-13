@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Portal Dashboard | Aurelia Global Health</title>
+  <meta name="description"
+    content="Secure international patient dashboard for submitting medical reports, tracking treatment plans, and viewing travel itineraries with Aurelia Global Health.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body style="background-color: var(--bg-body);">
+  <a href="#main-dashboard-content" class="skip-link">Skip to dashboard content</a>
+
+  <div class="dashboard-wrapper">
+    <!-- Full-height Left Side Menu from Top to Bottom -->
+    <aside class="dashboard-sidebar" id="dashboard-sidebar" aria-label="Patient Portal Navigation">
+      <!-- Top Brand Header inside Sidebar -->
+      <div class="dashboard-sidebar-header">
+        <a href="index.html" class="brand-logo" aria-label="Aurelia Global Health Home">
+          <div class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L4 7v10l8 5 8-5V7l-8-5z" stroke-linejoin="round" />
+              <path d="M12 8v8M8 12h8" stroke-linecap="round" />
+            </svg>
+          </div>
+          <div class="brand-text">
+            <span class="brand-name">Aurelia Global Health</span>
+            <span class="brand-sub">Patient Access Portal</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Patient Profile Mini Card -->
+      <div
+        style="padding: var(--space-4) var(--space-6); border-bottom: 1px solid var(--border-subtle); display: flex; align-items: center; gap: var(--space-3); background-color: var(--bg-surface-alt);">
+        <div
+          style="width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, var(--color-teal-600), var(--color-navy-800)); color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.95rem; flex-shrink: 0;">
+          MV
+        </div>
+        <div style="min-width: 0;">
+          <div
+            style="font-weight: 700; font-size: 0.9rem; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+            Marcus Vance
+          </div>
+          <div style="font-size: 0.76rem; color: var(--accent-primary); font-weight: 600;">
+            Case ID: #AGH-8421
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="dashboard-nav" aria-label="Sidebar Menu">
+        <a href="#overview" class="dashboard-nav-link active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="7" />
+            <rect x="14" y="3" width="7" height="7" />
+            <rect x="14" y="14" width="7" height="7" />
+            <rect x="3" y="14" width="7" height="7" />
+          </svg>
+          <span>Coordination Overview</span>
+        </a>
+
+        <a href="#submit-reports" class="dashboard-nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="17 8 12 3 7 8" />
+            <line x1="12" y1="3" x2="12" y2="15" />
+          </svg>
+          <span>Submit Medical Reports</span>
+        </a>
+
+        <a href="#treatment-plans" class="dashboard-nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+          </svg>
+          <span>Track Treatment Plans</span>
+        </a>
+
+        <a href="#travel-itinerary" class="dashboard-nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path
+              d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.3c.4-.2.6-.6.5-1.1z" />
+          </svg>
+          <span>Travel &amp; Itineraries</span>
+        </a>
+
+        <a href="#coordinator-desk" class="dashboard-nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path
+              d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+          </svg>
+          <span>Coordinator Chat</span>
+        </a>
+
+        <div style="margin-block: var(--space-4); border-top: 1px solid var(--border-subtle);"></div>
+
+        <a href="index.html" class="dashboard-nav-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+            <polyline points="9 22 9 12 15 12 15 22" />
+          </svg>
+          <span>Return to Website</span>
+        </a>
+      </nav>
+
+      <!-- Bottom Controls & Logout inside Sidebar -->
+      <div class="dashboard-sidebar-footer">
+        <div class="mobile-menu-toggles" style="display: flex; gap: var(--space-2); margin-bottom: var(--space-3);">
+          <button type="button" class="theme-toggle" aria-label="Switch theme" title="Toggle Light/Dark Theme" style="flex: 1; height: 38px; display: inline-flex; align-items: center; justify-content: center;">
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"/>
+              <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <button type="button" class="rtl-toggle" aria-label="Toggle text direction" title="Toggle RTL/LTR Direction" style="flex: 1; height: 38px; display: inline-flex; align-items: center; justify-content: center;">RTL</button>
+        </div>
+        <a href="login.html" class="dashboard-logout-btn" title="Sign out of patient portal">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+            <polyline points="16 17 21 12 16 7"/>
+            <line x1="21" y1="12" x2="9" y2="12"/>
+          </svg>
+          <span>Log Out</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Dashboard Content Area -->
+    <div class="dashboard-main">
+      <!-- Topbar Header -->
+      <header class="dashboard-topbar">
+        <div style="display: flex; align-items: center; gap: var(--space-3);">
+          <button type="button" class="mobile-sidebar-toggle" id="dashboard-sidebar-toggle" aria-label="Toggle Navigation Sidebar">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 12h18M3 6h18M3 18h18"/>
+            </svg>
+          </button>
+          <div style="min-width: 0;">
+            <h1 style="font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin: 0; line-height: 1.2;">
+              Patient Coordination Dashboard
+            </h1>
+            <div class="pathway-subtext"
+              style="display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--text-muted); margin-top: 2px;">
+              <span>Case #AGH-8421</span>
+              <span>&bull;</span>
+              <span style="color: var(--color-teal-600); font-weight: 600;">Active Pathway &bull; Isaria Klinikum
+                Munich</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: var(--space-3);">
+          <!-- Notification Bell -->
+          <div style="position: relative;">
+            <button type="button" class="btn btn-secondary btn-sm" aria-label="Notifications"
+              style="padding: 7px 10px; border-radius: var(--radius-sm);">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+              </svg>
+            </button>
+            <span
+              style="position: absolute; top: -3px; right: -3px; width: 8px; height: 8px; border-radius: 50%; background-color: #DC2626; border: 2px solid var(--bg-surface);"></span>
+          </div>
+
+          <!-- Theme Toggle -->
+          <button type="button" class="theme-toggle" aria-label="Switch theme" title="Toggle Light/Dark Theme">
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5" />
+              <path
+                d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"
+                stroke-linecap="round" />
+            </svg>
+          </button>
+
+          <!-- RTL Toggle -->
+          <button type="button" class="rtl-toggle" aria-label="Toggle text direction"
+            title="Toggle RTL/LTR Direction">RTL</button>
+
+          <a href="index.html" class="btn btn-secondary btn-sm" style="display: none;" id="btn-return-web-top">
+            Website
+          </a>
+        </div>
+      </header>
+
+      <!-- Dashboard Content Body -->
+      <main id="main-dashboard-content" class="dashboard-content">
+        <!-- Reassurance & Case Status Banner -->
+        <div class="compliance-banner"
+          style="background-color: var(--bg-subtle-teal); border-left-color: var(--accent-primary);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            style="color: var(--accent-primary);">
+            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <div class="compliance-banner-text">
+            <strong>Treatment Plan Verified by Hospital Board:</strong> Isaria Klinikum Munich has reviewed your
+            orthopedic MRI imaging and approved your preliminary surgical plan. Review the itinerary and hospital
+            proposal below.
+          </div>
+        </div>
+
+        <!-- 4 Metric Cards Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-4);">
+          <div class="metric-card">
+            <span class="metric-lbl">Hospital Review Status</span>
+            <span class="metric-val" style="color: var(--color-teal-600); font-size: 1.5rem;">Approved</span>
+            <span style="font-size: 0.78rem; color: var(--text-muted);">Isaria Klinikum (Munich)</span>
+          </div>
+
+          <div class="metric-card">
+            <span class="metric-lbl">Diagnostic Records</span>
+            <span class="metric-val">3 Files</span>
+            <span style="font-size: 0.78rem; color: var(--color-teal-600); font-weight: 600;">256-bit Encrypted &amp;
+              Translated</span>
+          </div>
+
+          <div class="metric-card">
+            <span class="metric-lbl">Medical Visa Status</span>
+            <span class="metric-val" style="color: var(--color-champagne-600); font-size: 1.5rem;">Letter Issued</span>
+            <span style="font-size: 0.78rem; color: var(--text-muted);">German Schengen Visa Dossier</span>
+          </div>
+
+          <div class="metric-card">
+            <span class="metric-lbl">Assigned Coordinator</span>
+            <span class="metric-val" style="font-size: 1.25rem;">Claire Moreau</span>
+            <span style="font-size: 0.78rem; color: var(--text-muted);">Geneva Central Liaison Desk</span>
+          </div>
+        </div>
+
+        <!-- SECTION 1: SUBMIT MEDICAL REPORTS & DIAGNOSTIC IMAGING -->
+        <section id="submit-reports" class="card" style="padding: var(--space-6);">
+          <div
+            style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-3); margin-bottom: var(--space-5);">
+            <div>
+              <span class="badge badge-teal" style="margin-bottom: var(--space-2);">Encrypted Document Transfer</span>
+              <h2 style="font-size: 1.45rem; margin-bottom: 4px;">Submit Medical Reports &amp; Diagnostic Imaging</h2>
+              <p style="font-size: 0.88rem; color: var(--text-secondary); margin: 0;">
+                Upload medical scans, MRI, CT DICOM archives, and blood test results directly for hospital specialist
+                review.
+              </p>
+            </div>
+            <span class="badge badge-sample">256-Bit Encrypted Transfer</span>
+          </div>
+
+          <!-- Drag and Drop Upload Dropzone -->
+          <div class="upload-dropzone" id="report-dropzone">
+            <input type="file" id="report-file-input" multiple style="display: none;"
+              accept=".pdf,.dcm,.zip,.jpg,.jpeg,.png">
+            <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.8"
+              style="margin-inline: auto; margin-bottom: var(--space-3); color: var(--accent-primary);">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="17 8 12 3 7 8" />
+              <line x1="12" y1="3" x2="12" y2="15" />
+            </svg>
+            <div style="font-weight: 700; font-size: 1.05rem; color: var(--text-primary); margin-bottom: 4px;">
+              Drag and drop medical documents or <span
+                style="color: var(--accent-primary); text-decoration: underline;">Browse Files</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-muted);">
+              Accepted formats: DICOM (.dcm), ZIP, PDF, JPG, PNG &bull; Max file size: 250MB per imaging volume
+            </div>
+          </div>
+
+          <div id="report-upload-feedback" class="form-feedback" role="status" aria-live="polite"></div>
+
+          <!-- Submitted Reports Table -->
+          <div style="margin-top: var(--space-6);">
+            <h3 style="font-size: 1.05rem; margin-bottom: var(--space-3);">Uploaded Diagnostic Records</h3>
+            <div style="overflow-x: auto;">
+              <table style="width: 100%; border-collapse: collapse; font-size: 0.88rem; text-align: left;">
+                <thead>
+                  <tr
+                    style="border-bottom: 2px solid var(--border-subtle); color: var(--text-muted); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em;">
+                    <th style="padding: var(--space-3) var(--space-4);">Document Name</th>
+                    <th style="padding: var(--space-3) var(--space-4);">Category</th>
+                    <th style="padding: var(--space-3) var(--space-4);">Date Uploaded</th>
+                    <th style="padding: var(--space-3) var(--space-4);">Size</th>
+                    <th style="padding: var(--space-3) var(--space-4);">Review Status</th>
+                    <th style="padding: var(--space-3) var(--space-4); text-align: right;">Action</th>
+                  </tr>
+                </thead>
+                <tbody id="submitted-reports-tbody">
+                  <tr style="border-bottom: 1px solid var(--border-subtle);">
+                    <td style="padding: var(--space-4); font-weight: 600; color: var(--text-primary);">
+                      <div style="display: flex; align-items: center; gap: 8px;">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                          stroke-width="2" style="color: var(--accent-primary);">
+                          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                          <polyline points="14 2 14 8 20 8" />
+                        </svg>
+                        Knee_Bilateral_MRI_DICOM.zip
+                      </div>
+                    </td>
+                    <td style="padding: var(--space-4); color: var(--text-secondary);">Diagnostic Imaging (MRI)</td>
+                    <td style="padding: var(--space-4); color: var(--text-muted);">May 24, 2026</td>
+                    <td style="padding: var(--space-4); color: var(--text-muted);">142.8 MB</td>
+                    <td style="padding: var(--space-4);">
+                      <span class="badge badge-teal" style="font-size: 0.75rem;">Verified &bull; Evaluated by
+                        Surgeon</span>
+                    </td>
+                    <td style="padding: var(--space-4); text-align: right;">
+                      <button type="button" class="btn btn-secondary btn-sm"
+                        style="padding: 4px 10px; font-size: 0.78rem;">View Log</button>
+                    </td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border-subtle);">
+                    <td style="padding: var(--space-4); font-weight: 600; color: var(--text-primary);">
+                      <div style="display: flex; align-items: center; gap: 8px;">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                          stroke-width="2" style="color: var(--accent-primary);">
+                          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                          <polyline points="14 2 14 8 20 8" />
+                        </svg>
+                        Cardiology_Clearance_ECG.pdf
+                      </div>
+                    </td>
+                    <td style="padding: var(--space-4); color: var(--text-secondary);">Pre-Op Medical Clearance</td>
+                    <td style="padding: var(--space-4); color: var(--text-muted);">May 26, 2026</td>
+                    <td style="padding: var(--space-4); color: var(--text-muted);">3.4 MB</td>
+                    <td style="padding: var(--space-4);">
+                      <span class="badge badge-teal" style="font-size: 0.75rem;">Verified &bull; Anesthesia Board</span>
+                    </td>
+                    <td style="padding: var(--space-4); text-align: right;">
+                      <button type="button" class="btn btn-secondary btn-sm"
+                        style="padding: 4px 10px; font-size: 0.78rem;">View Log</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding: var(--space-4); font-weight: 600; color: var(--text-primary);">
+                      <div style="display: flex; align-items: center; gap: 8px;">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                          stroke-width="2" style="color: var(--accent-primary);">
+                          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                          <polyline points="14 2 14 8 20 8" />
+                        </svg>
+                        Comprehensive_Blood_Panel.pdf
+                      </div>
+                    </td>
+                    <td style="padding: var(--space-4); color: var(--text-secondary);">Laboratory Pathology</td>
+                    <td style="padding: var(--space-4); color: var(--text-muted);">May 28, 2026</td>
+                    <td style="padding: var(--space-4); color: var(--text-muted);">1.8 MB</td>
+                    <td style="padding: var(--space-4);">
+                      <span class="badge badge-sample" style="font-size: 0.75rem;">Translation Completed</span>
+                    </td>
+                    <td style="padding: var(--space-4); text-align: right;">
+                      <button type="button" class="btn btn-secondary btn-sm"
+                        style="padding: 4px 10px; font-size: 0.78rem;">View Log</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 2: TRACK TREATMENT PLANS -->
+        <section id="treatment-plans" class="card" style="padding: var(--space-6);">
+          <span class="badge badge-teal" style="margin-bottom: var(--space-2);">Pathway Tracking</span>
+          <h2 style="font-size: 1.45rem; margin-bottom: 4px;">Track Treatment Plans &amp; Hospital Evaluation</h2>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: var(--space-6);">
+            Monitor each milestone of your medical travel pathway from initial evaluation to hospital surgical
+            admission.
+          </p>
+
+          <!-- 4-Step Patient Journey Tracker -->
+          <div class="timeline-tracker">
+            <div class="tracker-node is-done">
+              <div class="tracker-dot">✓</div>
+              <div class="tracker-label">1. Treatment Enquiry</div>
+              <span style="font-size: 0.72rem; color: var(--color-teal-600); font-weight: 600;">Completed</span>
+            </div>
+
+            <div class="tracker-node is-done">
+              <div class="tracker-dot">✓</div>
+              <div class="tracker-label">2. Records Translation</div>
+              <span style="font-size: 0.72rem; color: var(--color-teal-600); font-weight: 600;">Completed</span>
+            </div>
+
+            <div class="tracker-node is-active">
+              <div class="tracker-dot">3</div>
+              <div class="tracker-label">3. Hospital Proposal</div>
+              <span style="font-size: 0.72rem; color: var(--color-champagne-600); font-weight: 700;">Active &bull;
+                Ready</span>
+            </div>
+
+            <div class="tracker-node">
+              <div class="tracker-dot">4</div>
+              <div class="tracker-label">4. Travel &amp; Admission</div>
+              <span style="font-size: 0.72rem; color: var(--text-muted);">Scheduled</span>
+            </div>
+          </div>
+
+          <!-- Hospital Proposal Detail Card -->
+          <div
+            style="background-color: var(--bg-surface-alt); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: var(--space-6); margin-top: var(--space-6);">
+            <div
+              style="display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: var(--space-4); margin-bottom: var(--space-4);">
+              <div>
+                <span class="badge badge-sample" style="margin-bottom: var(--space-2);">Official Partner Hospital
+                  Proposal</span>
+                <h3 style="font-size: 1.25rem; color: var(--text-primary); margin-bottom: 4px;">
+                  Isaria Klinikum für Spezialmedizin &bull; Munich, Germany
+                </h3>
+                <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">
+                  Procedure: <strong>Minimally Invasive Bilateral Knee Joint Replacement (Arthroplasty)</strong>
+                </p>
+              </div>
+              <div style="text-align: right;">
+                <div
+                  style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em;">
+                  Estimated Cost Quote</div>
+                <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent-primary);">€24,800 – €26,500</div>
+                <div style="font-size: 0.75rem; color: var(--text-muted);">All-inclusive clinical estimate</div>
+              </div>
+            </div>
+
+            <div
+              style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-4); padding-block: var(--space-4); border-block: 1px solid var(--border-subtle); margin-bottom: var(--space-5); font-size: 0.88rem;">
+              <div>
+                <strong style="color: var(--text-primary); display: block;">Lead Attending Surgeon:</strong>
+                <span style="color: var(--text-secondary);">Prof. Dr. med. Henrik Von Berg</span>
+              </div>
+              <div>
+                <strong style="color: var(--text-primary); display: block;">Proposed Admission Date:</strong>
+                <span style="color: var(--text-secondary);">June 14, 2026 (08:30 CET)</span>
+              </div>
+              <div>
+                <strong style="color: var(--text-primary); display: block;">Estimated Inpatient Stay:</strong>
+                <span style="color: var(--text-secondary);">6 Days Inpatient + 4 Days Rehab</span>
+              </div>
+              <div>
+                <strong style="color: var(--text-primary); display: block;">Language Support:</strong>
+                <span style="color: var(--text-secondary);">English &amp; German Medical Navigator</span>
+              </div>
+            </div>
+
+            <div
+              style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-3);">
+              <div class="dashboard-action-buttons">
+                <button type="button" class="btn btn-primary btn-sm"
+                  onclick="alert('Proposal Confirmation: Your acceptance has been transmitted to Case Coordinator Claire Moreau.');">
+                  Accept Proposal &amp; Confirm Travel
+                </button>
+                <button type="button" class="btn btn-secondary btn-sm"
+                  onclick="alert('Proposal PDF downloaded for your records.');">
+                  Download Proposal PDF
+                </button>
+              </div>
+              <span style="font-size: 0.78rem; color: var(--text-muted);">
+                Valid through June 30, 2026 &bull; Medical decisions made solely by treating clinical faculty
+              </span>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 3: VIEWING TRAVEL ITINERARIES -->
+        <section id="travel-itinerary" class="card" style="padding: var(--space-6);">
+          <span class="badge badge-teal" style="margin-bottom: var(--space-2);">Logistics &amp; Travel</span>
+          <h2 style="font-size: 1.45rem; margin-bottom: 4px;">Medical Travel Itinerary &amp; On-Ground Coordination</h2>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: var(--space-6);">
+            Complete day-by-day flight, accessible hotel accommodation, airport escort, and surgical admission schedule.
+          </p>
+
+          <!-- Itinerary Cards Grid -->
+          <div
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4); margin-bottom: var(--space-6);">
+            <!-- Card 1: Flights & Airport Liaison -->
+            <div
+              style="border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: var(--space-5); background: var(--bg-surface);">
+              <div
+                style="display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-3); color: var(--accent-primary);">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.3c.4-.2.6-.6.5-1.1z" />
+                </svg>
+                <h3 style="font-size: 1.05rem; margin: 0; color: var(--text-primary);">Arrival Flight &amp; Airport
+                  Greeter</h3>
+              </div>
+              <div style="font-size: 0.86rem; color: var(--text-secondary); display: grid; gap: 6px;">
+                <div><strong>Inbound Flight:</strong> LH 2471 (London LHR &rarr; Munich MUC)</div>
+                <div><strong>Arrival Time:</strong> June 13, 2026 &bull; 14:40 CET</div>
+                <div><strong>Airport Liaison:</strong> Mr. Stefan Becker (Aurelia Munich Greeter)</div>
+                <div><strong>Vehicle:</strong> Accessible Medical Sprinter (+49 89 2120 440)</div>
+              </div>
+            </div>
+
+            <!-- Card 2: Accessible Hotel Accommodation -->
+            <div
+              style="border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: var(--space-5); background: var(--bg-surface);">
+              <div
+                style="display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-3); color: var(--accent-primary);">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 21h18M3 7v14M21 7v14M6 11h4M6 15h4M14 11h4M14 15h4M9 3l3 3 3-3" />
+                </svg>
+                <h3 style="font-size: 1.05rem; margin: 0; color: var(--text-primary);">Accessible Patient Lodging</h3>
+              </div>
+              <div style="font-size: 0.86rem; color: var(--text-secondary); display: grid; gap: 6px;">
+                <div><strong>Hotel:</strong> Hotel Vier Jahreszeiten Kempinski</div>
+                <div><strong>Address:</strong> Maximilianstraße 17, 80539 Munich</div>
+                <div><strong>Suite:</strong> Accessible Mobility Executive Suite</div>
+                <div><strong>Distance to Hospital:</strong> 12 Minutes (Direct Transfer)</div>
+              </div>
+            </div>
+
+            <!-- Card 3: Visa Invitation Letter -->
+            <div
+              style="border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: var(--space-5); background: var(--bg-surface);">
+              <div
+                style="display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-3); color: var(--accent-primary);">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                  <line x1="16" y1="2" x2="16" y2="6" />
+                  <line x1="8" y1="2" x2="8" y2="6" />
+                  <line x1="3" y1="10" x2="21" y2="10" />
+                </svg>
+                <h3 style="font-size: 1.05rem; margin: 0; color: var(--text-primary);">Medical Travel Visa Dossier</h3>
+              </div>
+              <div style="font-size: 0.86rem; color: var(--text-secondary); display: grid; gap: 6px;">
+                <div><strong>Visa Status:</strong> Letter of Medical Necessity Approved</div>
+                <div><strong>Consulate Reference:</strong> DE-MED-2026-8812</div>
+                <div><strong>Validity:</strong> Single Entry &bull; 30 Days Medical Stay</div>
+                <div><a href="#" style="color: var(--accent-primary); font-weight: 600; text-decoration: underline;"
+                    onclick="alert('Downloading Visa Invitation Dossier PDF'); return false;">Download Visa Dossier
+                    (.pdf)</a></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Day-by-Day Journey Schedule -->
+          <h3 style="font-size: 1.05rem; margin-bottom: var(--space-4);">Detailed Day-by-Day Travel Schedule</h3>
+          <div style="display: grid; gap: var(--space-3); font-size: 0.88rem;">
+            <div
+              style="display: grid; grid-template-columns: 100px minmax(0, 1fr); gap: var(--space-4); padding: var(--space-4); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); background: var(--bg-surface-alt);">
+              <strong style="color: var(--accent-primary);">Day 1 (Jun 13)</strong>
+              <div>
+                <strong>Arrival &amp; Hotel Check-In:</strong> Land at Munich Airport (LH 2471). Chauffeur
+                meet-and-greet at arrivals. Transfer to Hotel Vier Jahreszeiten Kempinski. In-room coordinator briefing.
+              </div>
+            </div>
+
+            <div
+              style="display: grid; grid-template-columns: 100px minmax(0, 1fr); gap: var(--space-4); padding: var(--space-4); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); background: var(--bg-surface-alt);">
+              <strong style="color: var(--accent-primary);">Day 2 (Jun 14)</strong>
+              <div>
+                <strong>Pre-Op Consultation &amp; Hospital Admission:</strong> 08:30 CET arrival at Isaria Klinikum.
+                In-person dilated examination, anesthesiology briefing, pre-op bloodwork, and private room check-in.
+              </div>
+            </div>
+
+            <div
+              style="display: grid; grid-template-columns: 100px minmax(0, 1fr); gap: var(--space-4); padding: var(--space-4); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); background: var(--bg-surface-alt);">
+              <strong style="color: var(--accent-primary);">Day 3 (Jun 15)</strong>
+              <div>
+                <strong>Surgical Procedure:</strong> Minimally invasive bilateral knee arthroplasty conducted by Prof.
+                Dr. med. Henrik Von Berg. Transition to specialized recovery suite. Daily family liaison updates.
+              </div>
+            </div>
+
+            <div
+              style="display: grid; grid-template-columns: 100px minmax(0, 1fr); gap: var(--space-4); padding: var(--space-4); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); background: var(--bg-surface-alt);">
+              <strong style="color: var(--accent-primary);">Day 4-8 (Jun 16-20)</strong>
+              <div>
+                <strong>Inpatient Rehabilitation &amp; Physiotherapy:</strong> Dedicated physical therapy twice daily in
+                hospital rehabilitation center. Pain management evaluation and mobilization milestone reviews.
+              </div>
+            </div>
+
+            <div
+              style="display: grid; grid-template-columns: 100px minmax(0, 1fr); gap: var(--space-4); padding: var(--space-4); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); background: var(--bg-surface-alt);">
+              <strong style="color: var(--accent-primary);">Day 9 (Jun 21)</strong>
+              <div>
+                <strong>Discharge &amp; Follow-up Telehealth Setup:</strong> Final surgical wound evaluation, discharge
+                dossier issued in English, and transfer back to hotel for post-discharge rest.
+              </div>
+            </div>
+
+            <div
+              style="display: grid; grid-template-columns: 100px minmax(0, 1fr); gap: var(--space-4); padding: var(--space-4); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); background: var(--bg-surface-alt);">
+              <strong style="color: var(--accent-primary);">Day 10 (Jun 22)</strong>
+              <div>
+                <strong>Fitness-to-Fly Clearance &amp; Departure:</strong> Final fit-to-fly clinical certificate signed
+                by lead surgeon. Chauffeured transfer to Munich Airport with wheelchair assist through security.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 4: COORDINATOR MESSAGING & EMERGENCY DESK -->
+        <section id="coordinator-desk" class="card" style="padding: var(--space-6);">
+          <div
+            style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-3); margin-bottom: var(--space-4);">
+            <div>
+              <span class="badge badge-teal" style="margin-bottom: var(--space-2);">Direct Case Support</span>
+              <h2 style="font-size: 1.45rem; margin-bottom: 4px;">Assigned Patient Coordinator Liaison</h2>
+              <p style="font-size: 0.88rem; color: var(--text-secondary); margin: 0;">
+                Reach Senior International Liaison Claire Moreau for immediate itinerary adjustments or language
+                interpreter requests.
+              </p>
+            </div>
+            <a href="https://wa.me/41225180900" target="_blank" rel="noopener noreferrer"
+              class="btn btn-whatsapp btn-sm">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+              </svg>
+              WhatsApp Coordinator (+41 22 518 0900)
+            </a>
+          </div>
+
+          <!-- Message Composer Simulation -->
+          <div
+            style="border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: var(--space-4); background: var(--bg-surface-alt);">
+            <div style="font-size: 0.84rem; color: var(--text-secondary); margin-bottom: var(--space-3);">
+              <strong>Latest Coordinator Note (Today, 10:15 CET):</strong><br>
+              &ldquo;Hello Marcus, Prof. Von Berg&rsquo;s clinical team has confirmed your pre-op consultation time for
+              June 14. Stefan Becker will be waiting with an Aurelia name placard upon your flight landing at Munich
+              Airport. Please let me know if you need companion dietary arrangements for the hospital private
+              suite.&rdquo;
+            </div>
+            <div class="composer-input-row">
+              <input type="text" class="form-control" placeholder="Type a message to your case coordinator..."
+                style="font-size: 0.88rem;">
+              <button type="button" class="btn btn-primary btn-sm"
+                onclick="alert('Message sent to coordinator Claire Moreau.');">
+                Send Note
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
