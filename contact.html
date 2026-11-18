@@ -151,7 +151,7 @@
         <div class="grid-2"
           style="grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.85fr); align-items: start; gap: var(--space-10);">
           <!-- Left: International Patient Enquiry Form -->
-          <div class="card" style="padding: var(--space-8);">
+          <div class="card contact-enquiry-card">
             <span class="eyebrow" style="align-self: flex-start;">Preliminary Coordination Request</span>
             <h2 style="font-size: 1.65rem; margin-bottom: var(--space-2);">Submit an International Patient Enquiry</h2>
             <p style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: var(--space-6);">
@@ -348,7 +348,7 @@
                 Follow our official verified channels for hospital tour videos, international patient briefings, travel
                 visa updates, and healthcare advisories.
               </p>
-              <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3);">
+              <div class="contact-social-grid">
                 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="btn-social"
                   style="width: 100%; justify-content: flex-start;" title="LinkedIn">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -401,48 +401,47 @@
                 </a>
               </div>
             </div>
+          </div>
+        </div>
 
-            <!-- Office Address & Interactive Map -->
-            <div class="card" style="overflow: hidden;">
-              <div style="padding: var(--space-6);">
-                <span class="badge badge-sample" style="margin-bottom: var(--space-2);">Sample Office Location</span>
-                <h3 style="margin-bottom: var(--space-2);">Global Coordination Headquarters</h3>
-                <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: var(--space-2);">
-                  Rue du Rhône 42, Floor 4 &bull; 1204 Geneva, Switzerland
-                </p>
-                <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: var(--space-4);">
-                  Liaison Desks: Marina Bay, Singapore &bull; Marylebone, London, UK
-                </p>
-                <div class="contact-map-actions">
-                  <a href="https://maps.google.com/?q=Rue+du+Rhone+42+1204+Geneva+Switzerland" target="_blank"
-                    rel="noopener noreferrer" class="btn btn-secondary btn-sm">
-                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
-                      style="margin-right: 4px;">
-                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                      <circle cx="12" cy="10" r="3" />
-                    </svg>
-                    Open in Google Maps
-                  </a>
-                  <a href="#primary-enquiry-form" class="btn btn-primary btn-sm">
-                    Book In-Person Appointment
-                  </a>
-                </div>
-              </div>
-              <!-- Embedded Interactive OpenStreetMap Component -->
-              <div
-                style="position: relative; border-top: 1px solid var(--border-subtle); background-color: var(--color-navy-900);">
-                <iframe title="Aurelia Global Health Geneva Headquarters Location Map"
-                  src="https://www.openstreetmap.org/export/embed.html?bbox=6.1400%2C46.2020%2C6.1480%2C46.2070&amp;layer=mapnik&amp;marker=46.2044%2C6.1432"
-                  style="width: 100%; height: 260px; border: 0; display: block;" loading="lazy">
-                </iframe>
-                <div
-                  style="padding: var(--space-3) var(--space-6); background-color: var(--bg-surface-alt); border-top: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: space-between; font-size: 0.78rem; color: var(--text-muted);">
-                  <span>Geneva HQ (46.2044° N, 6.1432° E) &bull; Lakefront Financial &amp; Medical District</span>
-                  <a href="https://www.openstreetmap.org/?mlat=46.2044&amp;mlon=6.1432#map=16/46.2044/6.1432"
-                    target="_blank" rel="noopener noreferrer"
-                    style="color: var(--accent-primary); font-weight: 600;">View Larger Map &rarr;</a>
-                </div>
-              </div>
+        <!-- Full-Width Horizontal Office Address & Interactive Map -->
+        <div class="card contact-map-horizontal">
+          <div class="contact-map-info">
+            <span class="badge badge-sample" style="align-self: flex-start; margin-bottom: var(--space-3);">Sample Office Location</span>
+            <h3 style="margin-bottom: var(--space-2);">Global Coordination Headquarters</h3>
+            <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: var(--space-2);">
+              Rue du Rhône 42, Floor 4 &bull; 1204 Geneva, Switzerland
+            </p>
+            <p style="font-size: 0.84rem; color: var(--text-muted); margin-bottom: var(--space-5);">
+              Regional Liaison Desks: Marina Bay, Singapore &bull; Marylebone, London, UK
+            </p>
+            <div class="contact-map-actions">
+              <a href="https://maps.google.com/?q=Rue+du+Rhone+42+1204+Geneva+Switzerland" target="_blank"
+                rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+                  style="margin-right: 4px;">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                Open in Google Maps
+              </a>
+              <a href="#patient-enquiry-form" class="btn btn-primary btn-sm">
+                Book In-Person Appointment
+              </a>
+            </div>
+          </div>
+          <!-- Embedded Interactive OpenStreetMap Component -->
+          <div class="contact-map-frame-wrap">
+            <iframe title="Aurelia Global Health Geneva Headquarters Location Map"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=6.1400%2C46.2020%2C6.1480%2C46.2070&amp;layer=mapnik&amp;marker=46.2044%2C6.1432"
+              loading="lazy">
+            </iframe>
+            <div
+              style="padding: var(--space-3) var(--space-6); background-color: var(--bg-surface-alt); border-top: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-2); font-size: 0.78rem; color: var(--text-muted);">
+              <span>Geneva HQ (46.2044° N, 6.1432° E) &bull; Lakefront Financial &amp; Medical District</span>
+              <a href="https://www.openstreetmap.org/?mlat=46.2044&amp;mlon=6.1432#map=16/46.2044/6.1432"
+                target="_blank" rel="noopener noreferrer"
+                style="color: var(--accent-primary); font-weight: 600;">View Larger Map &rarr;</a>
             </div>
           </div>
         </div>

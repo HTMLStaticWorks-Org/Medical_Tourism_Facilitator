@@ -132,7 +132,7 @@
 
         <!-- Clean Category Navigation & Filtering Interface -->
         <div class="filter-panel" aria-label="Filter treatment categories">
-          <div class="filter-controls-grid" style="grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) auto;">
+          <div class="filter-controls-3col">
             <div class="form-group" style="margin-bottom: 0;">
               <label for="treatment-search" class="form-label">Search Specialty or Procedure</label>
               <input type="search" id="treatment-search" class="form-control" placeholder="e.g., Knee replacement, IVF, Cardiology, Implant, Cataract...">
@@ -156,7 +156,7 @@
             </div>
 
             <div>
-              <button type="button" id="treatment-filter-reset" class="btn btn-secondary" style="height: 44px;">
+              <button type="button" id="treatment-filter-reset" class="btn btn-secondary" style="height: 46px;">
                 Reset Filters
               </button>
             </div>
@@ -178,7 +178,7 @@
 
         <!-- Treatments Grid (Pre-rendered for SEO & Accessibility + Live Filtered via main.js) -->
         <div class="grid-3" id="treatments-directory-grid">
-          <article class="card" id="category-cardiology">
+          <article class="card treatment-card" id="category-cardiology">
             <div class="card-media">
               <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&q=80" alt="Cardiology &amp; Cardiovascular Care" loading="lazy">
               <div class="card-badges"><span class="badge badge-location">Educational Category</span></div>
@@ -187,16 +187,22 @@
               <div class="card-meta">Medical Travel Specialty</div>
               <h3 class="card-title">Cardiology &amp; Cardiovascular Care</h3>
               <p class="card-text">Educational overview of diagnostic cardiology, interventional procedures, and cardiothoracic surgery pathways coordinated with international heart centers.</p>
-              <ul class="procedure-list">
-                <li>Comprehensive Cardiac Diagnostic &amp; Imaging Evaluation</li>
-                <li>Coronary Angiography &amp; Interventional Stent Placement</li>
-                <li>Heart Valve Repair &amp; Replacement Consultations</li>
-                <li>Cardiac Arrhythmia &amp; Electrophysiology Assessments</li>
-              </ul>
-              <div class="tag-list">
-                <span class="tag">Interventional Cardiology</span>
-                <span class="tag">Cardiothoracic Surgery</span>
-                <span class="tag">Electrophysiology</span>
+              <div class="treatment-procedures-block">
+                <div class="treatment-sub-heading">Common Procedures &amp; Services</div>
+                <ul class="procedure-list" style="margin-bottom: 0;">
+                  <li>Comprehensive Cardiac Diagnostic &amp; Imaging Evaluation</li>
+                  <li>Coronary Angiography &amp; Interventional Stent Placement</li>
+                  <li>Heart Valve Repair &amp; Replacement Consultations</li>
+                  <li>Cardiac Arrhythmia &amp; Electrophysiology Assessments</li>
+                </ul>
+              </div>
+              <div class="treatment-specialties-block">
+                <div class="treatment-sub-heading">Related Specialties</div>
+                <div class="tag-list" style="margin-bottom: 0;">
+                  <span class="tag">Interventional Cardiology</span>
+                  <span class="tag">Cardiothoracic Surgery</span>
+                  <span class="tag">Electrophysiology</span>
+                </div>
               </div>
               <div class="card-footer">
                 <button type="button" class="btn btn-secondary btn-sm" data-treatment-modal="cardiology">Category Guide</button>
@@ -205,7 +211,7 @@
             </div>
           </article>
 
-          <article class="card" id="category-orthopedics">
+          <article class="card treatment-card" id="category-orthopedics">
             <div class="card-media">
               <img src="https://images.unsplash.com/photo-1579684453423-f84349ef60b0?auto=format&fit=crop&w=900&q=80" alt="Orthopedics &amp; Joint Replacement" loading="lazy">
               <div class="card-badges"><span class="badge badge-location">Educational Category</span></div>
@@ -214,16 +220,22 @@
               <div class="card-meta">Medical Travel Specialty</div>
               <h3 class="card-title">Orthopedics &amp; Joint Replacement</h3>
               <p class="card-text">General educational information on joint preservation, hip and knee arthroplasty, spine procedures, and post-surgical mobility rehabilitation.</p>
-              <ul class="procedure-list">
-                <li>Total &amp; Partial Knee Replacement Evaluations</li>
-                <li>Hip Arthroplasty &amp; Joint Preservation Consultations</li>
-                <li>Arthroscopic Sports Medicine &amp; Ligament Reconstruction</li>
-                <li>Cervical &amp; Lumbar Spine Decompression Assessments</li>
-              </ul>
-              <div class="tag-list">
-                <span class="tag">Orthopedic Surgery</span>
-                <span class="tag">Spine Surgery</span>
-                <span class="tag">Sports Medicine</span>
+              <div class="treatment-procedures-block">
+                <div class="treatment-sub-heading">Common Procedures &amp; Services</div>
+                <ul class="procedure-list" style="margin-bottom: 0;">
+                  <li>Total &amp; Partial Knee Replacement Evaluations</li>
+                  <li>Hip Arthroplasty &amp; Joint Preservation Consultations</li>
+                  <li>Arthroscopic Sports Medicine &amp; Ligament Reconstruction</li>
+                  <li>Cervical &amp; Lumbar Spine Decompression Assessments</li>
+                </ul>
+              </div>
+              <div class="treatment-specialties-block">
+                <div class="treatment-sub-heading">Related Specialties</div>
+                <div class="tag-list" style="margin-bottom: 0;">
+                  <span class="tag">Orthopedic Surgery</span>
+                  <span class="tag">Spine Surgery</span>
+                  <span class="tag">Sports Medicine</span>
+                </div>
               </div>
               <div class="card-footer">
                 <button type="button" class="btn btn-secondary btn-sm" data-treatment-modal="orthopedics">Category Guide</button>
@@ -232,7 +244,7 @@
             </div>
           </article>
 
-          <article class="card" id="category-oncology">
+          <article class="card treatment-card" id="category-oncology">
             <div class="card-media">
               <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=900&q=80" alt="Oncology &amp; Multidisciplinary Cancer Care" loading="lazy">
               <div class="card-badges"><span class="badge badge-location">Educational Category</span></div>
@@ -241,16 +253,22 @@
               <div class="card-meta">Medical Travel Specialty</div>
               <h3 class="card-title">Oncology &amp; Multidisciplinary Cancer Care</h3>
               <p class="card-text">Educational resource on multidisciplinary tumor board reviews, surgical oncology, radiation therapy planning, and medical oncology consultations.</p>
-              <ul class="procedure-list">
-                <li>Multidisciplinary Tumor Board Second-Opinion Review</li>
-                <li>Surgical Oncology &amp; Organ-Conserving Evaluations</li>
-                <li>Precision Radiation Therapy Planning Consultations</li>
-                <li>Medical Oncology &amp; Immunotherapy Assessments</li>
-              </ul>
-              <div class="tag-list">
-                <span class="tag">Medical Oncology</span>
-                <span class="tag">Surgical Oncology</span>
-                <span class="tag">Radiation Oncology</span>
+              <div class="treatment-procedures-block">
+                <div class="treatment-sub-heading">Common Procedures &amp; Services</div>
+                <ul class="procedure-list" style="margin-bottom: 0;">
+                  <li>Multidisciplinary Tumor Board Second-Opinion Review</li>
+                  <li>Surgical Oncology &amp; Organ-Conserving Evaluations</li>
+                  <li>Precision Radiation Therapy Planning Consultations</li>
+                  <li>Medical Oncology &amp; Immunotherapy Assessments</li>
+                </ul>
+              </div>
+              <div class="treatment-specialties-block">
+                <div class="treatment-sub-heading">Related Specialties</div>
+                <div class="tag-list" style="margin-bottom: 0;">
+                  <span class="tag">Medical Oncology</span>
+                  <span class="tag">Surgical Oncology</span>
+                  <span class="tag">Radiation Oncology</span>
+                </div>
               </div>
               <div class="card-footer">
                 <button type="button" class="btn btn-secondary btn-sm" data-treatment-modal="oncology">Category Guide</button>
@@ -259,7 +277,7 @@
             </div>
           </article>
 
-          <article class="card" id="category-neurology">
+          <article class="card treatment-card" id="category-neurology">
             <div class="card-media">
               <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=900&q=80" alt="Neurology &amp; Neurosurgery" loading="lazy">
               <div class="card-badges"><span class="badge badge-location">Educational Category</span></div>
@@ -268,16 +286,22 @@
               <div class="card-meta">Medical Travel Specialty</div>
               <h3 class="card-title">Neurology &amp; Neurosurgery</h3>
               <p class="card-text">General overview of neurological diagnostics, cerebrovascular evaluations, movement disorder assessments, and cranial or spinal neurosurgery.</p>
-              <ul class="procedure-list">
-                <li>Comprehensive Neurological &amp; Neuro-Imaging Diagnostics</li>
-                <li>Cranial &amp; Skull-Base Neurosurgical Consultations</li>
-                <li>Movement Disorder &amp; Deep Brain Stimulation Assessments</li>
-                <li>Post-Acute Neuro-Rehabilitation Program Coordination</li>
-              </ul>
-              <div class="tag-list">
-                <span class="tag">Neurology</span>
-                <span class="tag">Neurosurgery</span>
-                <span class="tag">Neuro-Rehabilitation</span>
+              <div class="treatment-procedures-block">
+                <div class="treatment-sub-heading">Common Procedures &amp; Services</div>
+                <ul class="procedure-list" style="margin-bottom: 0;">
+                  <li>Comprehensive Neurological &amp; Neuro-Imaging Diagnostics</li>
+                  <li>Cranial &amp; Skull-Base Neurosurgical Consultations</li>
+                  <li>Movement Disorder &amp; Deep Brain Stimulation Assessments</li>
+                  <li>Post-Acute Neuro-Rehabilitation Program Coordination</li>
+                </ul>
+              </div>
+              <div class="treatment-specialties-block">
+                <div class="treatment-sub-heading">Related Specialties</div>
+                <div class="tag-list" style="margin-bottom: 0;">
+                  <span class="tag">Neurology</span>
+                  <span class="tag">Neurosurgery</span>
+                  <span class="tag">Neuro-Rehabilitation</span>
+                </div>
               </div>
               <div class="card-footer">
                 <button type="button" class="btn btn-secondary btn-sm" data-treatment-modal="neurology">Category Guide</button>
@@ -286,7 +310,7 @@
             </div>
           </article>
 
-          <article class="card" id="category-fertility-ivf">
+          <article class="card treatment-card" id="category-fertility-ivf">
             <div class="card-media">
               <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=900&q=80" alt="Fertility, Reproductive Medicine &amp; IVF" loading="lazy">
               <div class="card-badges"><span class="badge badge-location">Educational Category</span></div>
@@ -295,16 +319,22 @@
               <div class="card-meta">Medical Travel Specialty</div>
               <h3 class="card-title">Fertility, Reproductive Medicine &amp; IVF</h3>
               <p class="card-text">Educational information regarding fertility diagnostics, assisted reproductive technology (ART) consultations, and cycle logistics abroad.</p>
-              <ul class="procedure-list">
-                <li>Male &amp; Female Comprehensive Fertility Diagnostics</li>
-                <li>In Vitro Fertilization (IVF) &amp; ICSI Cycle Consultations</li>
-                <li>Fertility Preservation &amp; Cryopreservation Information</li>
-                <li>Reproductive Endocrinology &amp; Hormonal Evaluations</li>
-              </ul>
-              <div class="tag-list">
-                <span class="tag">Reproductive Endocrinology</span>
-                <span class="tag">Embryology</span>
-                <span class="tag">Gynecology</span>
+              <div class="treatment-procedures-block">
+                <div class="treatment-sub-heading">Common Procedures &amp; Services</div>
+                <ul class="procedure-list" style="margin-bottom: 0;">
+                  <li>Male &amp; Female Comprehensive Fertility Diagnostics</li>
+                  <li>In Vitro Fertilization (IVF) &amp; ICSI Cycle Consultations</li>
+                  <li>Fertility Preservation &amp; Cryopreservation Information</li>
+                  <li>Reproductive Endocrinology &amp; Hormonal Evaluations</li>
+                </ul>
+              </div>
+              <div class="treatment-specialties-block">
+                <div class="treatment-sub-heading">Related Specialties</div>
+                <div class="tag-list" style="margin-bottom: 0;">
+                  <span class="tag">Reproductive Endocrinology</span>
+                  <span class="tag">Embryology</span>
+                  <span class="tag">Gynecology</span>
+                </div>
               </div>
               <div class="card-footer">
                 <button type="button" class="btn btn-secondary btn-sm" data-treatment-modal="fertility-ivf">Category Guide</button>
@@ -313,7 +343,7 @@
             </div>
           </article>
 
-          <article class="card" id="category-cosmetic-surgery">
+          <article class="card treatment-card" id="category-cosmetic-surgery">
             <div class="card-media">
               <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=80" alt="Cosmetic, Plastic &amp; Reconstructive Surgery" loading="lazy">
               <div class="card-badges"><span class="badge badge-location">Educational Category</span></div>
@@ -322,15 +352,21 @@
               <div class="card-meta">Medical Travel Specialty</div>
               <h3 class="card-title">Cosmetic, Plastic &amp; Reconstructive Surgery</h3>
               <p class="card-text">Educational guide to reconstructive and aesthetic surgical consultations, pre-operative screening, and post-procedure recovery planning.</p>
-              <ul class="procedure-list">
-                <li>Reconstructive Microsurgery &amp; Post-Trauma Consultations</li>
-                <li>Facial Plastic &amp; Rhinoplasty Surgical Evaluations</li>
-                <li>Breast Reconstruction &amp; Contouring Consultations</li>
-                <li>Structured Post-Operative Nursing &amp; Follow-Up Planning</li>
-              </ul>
-              <div class="tag-list">
-                <span class="tag">Plastic &amp; Reconstructive Surgery</span>
-                <span class="tag">Craniofacial Surgery</span>
+              <div class="treatment-procedures-block">
+                <div class="treatment-sub-heading">Common Procedures &amp; Services</div>
+                <ul class="procedure-list" style="margin-bottom: 0;">
+                  <li>Reconstructive Microsurgery &amp; Post-Trauma Consultations</li>
+                  <li>Facial Plastic &amp; Rhinoplasty Surgical Evaluations</li>
+                  <li>Breast Reconstruction &amp; Contouring Consultations</li>
+                  <li>Structured Post-Operative Nursing &amp; Follow-Up Planning</li>
+                </ul>
+              </div>
+              <div class="treatment-specialties-block">
+                <div class="treatment-sub-heading">Related Specialties</div>
+                <div class="tag-list" style="margin-bottom: 0;">
+                  <span class="tag">Plastic &amp; Reconstructive Surgery</span>
+                  <span class="tag">Craniofacial Surgery</span>
+                </div>
               </div>
               <div class="card-footer">
                 <button type="button" class="btn btn-secondary btn-sm" data-treatment-modal="cosmetic-surgery">Category Guide</button>
@@ -339,7 +375,7 @@
             </div>
           </article>
 
-          <article class="card" id="category-dental">
+          <article class="card treatment-card" id="category-dental">
             <div class="card-media">
               <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=900&q=80" alt="Dental Treatments &amp; Oral Rehabilitation" loading="lazy">
               <div class="card-badges"><span class="badge badge-location">Educational Category</span></div>
@@ -348,16 +384,22 @@
               <div class="card-meta">Medical Travel Specialty</div>
               <h3 class="card-title">Dental Treatments &amp; Oral Rehabilitation</h3>
               <p class="card-text">General information on dental implantology, prosthodontics, endodontics, and multi-stage oral rehabilitation scheduling for international visitors.</p>
-              <ul class="procedure-list">
-                <li>3D CBCT Dental Imaging &amp; Treatment Planning</li>
-                <li>Dental Implantology &amp; Bone Grafting Evaluations</li>
-                <li>Prosthodontic Crowns, Bridges &amp; Veneer Consultations</li>
-                <li>Full-Arch Restorative Rehabilitation Assessments</li>
-              </ul>
-              <div class="tag-list">
-                <span class="tag">Prosthodontics</span>
-                <span class="tag">Oral &amp; Maxillofacial Surgery</span>
-                <span class="tag">Periodontics</span>
+              <div class="treatment-procedures-block">
+                <div class="treatment-sub-heading">Common Procedures &amp; Services</div>
+                <ul class="procedure-list" style="margin-bottom: 0;">
+                  <li>3D CBCT Dental Imaging &amp; Treatment Planning</li>
+                  <li>Dental Implantology &amp; Bone Grafting Evaluations</li>
+                  <li>Prosthodontic Crowns, Bridges &amp; Veneer Consultations</li>
+                  <li>Full-Arch Restorative Rehabilitation Assessments</li>
+                </ul>
+              </div>
+              <div class="treatment-specialties-block">
+                <div class="treatment-sub-heading">Related Specialties</div>
+                <div class="tag-list" style="margin-bottom: 0;">
+                  <span class="tag">Prosthodontics</span>
+                  <span class="tag">Oral &amp; Maxillofacial Surgery</span>
+                  <span class="tag">Periodontics</span>
+                </div>
               </div>
               <div class="card-footer">
                 <button type="button" class="btn btn-secondary btn-sm" data-treatment-modal="dental">Category Guide</button>
@@ -366,7 +408,7 @@
             </div>
           </article>
 
-          <article class="card" id="category-organ-transplant">
+          <article class="card treatment-card" id="category-organ-transplant">
             <div class="card-media">
               <img src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&w=900&q=80" alt="Organ Transplant Information &amp; Evaluation" loading="lazy">
               <div class="card-badges"><span class="badge badge-location">Educational Category</span></div>
@@ -375,16 +417,22 @@
               <div class="card-meta">Medical Travel Specialty</div>
               <h3 class="card-title">Organ Transplant Information &amp; Evaluation</h3>
               <p class="card-text">Educational information on living-donor transplant evaluation protocols, regulatory compliance, and multidisciplinary transplant center inquiries.</p>
-              <ul class="procedure-list">
-                <li>Recipient &amp; Living-Donor Clinical Compatibility Screening</li>
-                <li>Living-Donor Liver &amp; Kidney Transplant Evaluation Info</li>
-                <li>Corneal &amp; Stem Cell Transplant Consultations</li>
-                <li>Mandatory Hospital Ethics &amp; Legal Documentation Review</li>
-              </ul>
-              <div class="tag-list">
-                <span class="tag">Transplant Surgery</span>
-                <span class="tag">Nephrology</span>
-                <span class="tag">Hepatology</span>
+              <div class="treatment-procedures-block">
+                <div class="treatment-sub-heading">Common Procedures &amp; Services</div>
+                <ul class="procedure-list" style="margin-bottom: 0;">
+                  <li>Recipient &amp; Living-Donor Clinical Compatibility Screening</li>
+                  <li>Living-Donor Liver &amp; Kidney Transplant Evaluation Info</li>
+                  <li>Corneal &amp; Stem Cell Transplant Consultations</li>
+                  <li>Mandatory Hospital Ethics &amp; Legal Documentation Review</li>
+                </ul>
+              </div>
+              <div class="treatment-specialties-block">
+                <div class="treatment-sub-heading">Related Specialties</div>
+                <div class="tag-list" style="margin-bottom: 0;">
+                  <span class="tag">Transplant Surgery</span>
+                  <span class="tag">Nephrology</span>
+                  <span class="tag">Hepatology</span>
+                </div>
               </div>
               <div class="card-footer">
                 <button type="button" class="btn btn-secondary btn-sm" data-treatment-modal="organ-transplant">Category Guide</button>
@@ -393,7 +441,7 @@
             </div>
           </article>
 
-          <article class="card" id="category-eye-care">
+          <article class="card treatment-card" id="category-eye-care">
             <div class="card-media">
               <img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=900&q=80" alt="Eye Care &amp; Ophthalmology" loading="lazy">
               <div class="card-badges"><span class="badge badge-location">Educational Category</span></div>
@@ -402,16 +450,22 @@
               <div class="card-meta">Medical Travel Specialty</div>
               <h3 class="card-title">Eye Care &amp; Ophthalmology</h3>
               <p class="card-text">Educational overview of cataract surgery, corneal care, retinal subspecialties, glaucoma management, and refractive vision assessments.</p>
-              <ul class="procedure-list">
-                <li>Comprehensive Ophthalmic &amp; Retinal Diagnostic Screening</li>
-                <li>Cataract Microsurgery &amp; Intraocular Lens Consultations</li>
-                <li>Laser Refractive Vision Assessments (LASIK / SMILE / PRK)</li>
-                <li>Vitreoretinal &amp; Glaucoma Subspecialty Consultations</li>
-              </ul>
-              <div class="tag-list">
-                <span class="tag">Ophthalmology</span>
-                <span class="tag">Retinal Surgery</span>
-                <span class="tag">Cornea &amp; Refractive</span>
+              <div class="treatment-procedures-block">
+                <div class="treatment-sub-heading">Common Procedures &amp; Services</div>
+                <ul class="procedure-list" style="margin-bottom: 0;">
+                  <li>Comprehensive Ophthalmic &amp; Retinal Diagnostic Screening</li>
+                  <li>Cataract Microsurgery &amp; Intraocular Lens Consultations</li>
+                  <li>Laser Refractive Vision Assessments (LASIK / SMILE / PRK)</li>
+                  <li>Vitreoretinal &amp; Glaucoma Subspecialty Consultations</li>
+                </ul>
+              </div>
+              <div class="treatment-specialties-block">
+                <div class="treatment-sub-heading">Related Specialties</div>
+                <div class="tag-list" style="margin-bottom: 0;">
+                  <span class="tag">Ophthalmology</span>
+                  <span class="tag">Retinal Surgery</span>
+                  <span class="tag">Cornea &amp; Refractive</span>
+                </div>
               </div>
               <div class="card-footer">
                 <button type="button" class="btn btn-secondary btn-sm" data-treatment-modal="eye-care">Category Guide</button>
@@ -420,7 +474,7 @@
             </div>
           </article>
 
-          <article class="card" id="category-general-surgery">
+          <article class="card treatment-card" id="category-general-surgery">
             <div class="card-media">
               <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=900&q=80" alt="General &amp; Specialized Minimally Invasive Surgery" loading="lazy">
               <div class="card-badges"><span class="badge badge-location">Educational Category</span></div>
@@ -429,16 +483,22 @@
               <div class="card-meta">Medical Travel Specialty</div>
               <h3 class="card-title">General &amp; Specialized Minimally Invasive Surgery</h3>
               <p class="card-text">Educational information on laparoscopic, robotic-assisted, gastrointestinal, metabolic, and endocrine surgical evaluations.</p>
-              <ul class="procedure-list">
-                <li>Laparoscopic &amp; Robotic-Assisted Surgical Evaluations</li>
-                <li>Gastrointestinal, Hepatobiliary &amp; Colorectal Consultations</li>
-                <li>Bariatric &amp; Metabolic Surgery Multidisciplinary Assessments</li>
-                <li>Endocrine, Urological &amp; Gynecological Procedures</li>
-              </ul>
-              <div class="tag-list">
-                <span class="tag">General Surgery</span>
-                <span class="tag">Gastroenterology</span>
-                <span class="tag">Urology</span>
+              <div class="treatment-procedures-block">
+                <div class="treatment-sub-heading">Common Procedures &amp; Services</div>
+                <ul class="procedure-list" style="margin-bottom: 0;">
+                  <li>Laparoscopic &amp; Robotic-Assisted Surgical Evaluations</li>
+                  <li>Gastrointestinal, Hepatobiliary &amp; Colorectal Consultations</li>
+                  <li>Bariatric &amp; Metabolic Surgery Multidisciplinary Assessments</li>
+                  <li>Endocrine, Urological &amp; Gynecological Procedures</li>
+                </ul>
+              </div>
+              <div class="treatment-specialties-block">
+                <div class="treatment-sub-heading">Related Specialties</div>
+                <div class="tag-list" style="margin-bottom: 0;">
+                  <span class="tag">General Surgery</span>
+                  <span class="tag">Gastroenterology</span>
+                  <span class="tag">Urology</span>
+                </div>
               </div>
               <div class="card-footer">
                 <button type="button" class="btn btn-secondary btn-sm" data-treatment-modal="general-surgery">Category Guide</button>
@@ -457,14 +517,32 @@
           <div>
             <span class="eyebrow">How Clinical Evaluation Works</span>
             <h2>What Happens After You Select a Treatment Category?</h2>
-            <p class="lead" style="margin-top: var(--space-3); margin-bottom: var(--space-5);">
+            <p class="lead" style="margin-top: var(--space-3); margin-bottom: var(--space-6);">
               Selecting a category on our website initiates a non-clinical coordination enquiry—never an automated medical booking.
             </p>
-            <ul class="procedure-list" style="font-size: 0.95rem; gap: var(--space-3);">
-              <li><strong>1. Coordinator Briefing:</strong> We discuss your preferred destination countries, timeline, and language preferences.</li>
-              <li><strong>2. Secure Record Transfer:</strong> We provide an encrypted hospital link so you can share recent diagnostic reports or imaging directly with the hospital desk.</li>
-              <li><strong>3. Specialist Review:</strong> The hospital's clinical department reviews your documentation and advises whether an in-person evaluation or tele-consultation is appropriate.</li>
-            </ul>
+            <div class="evaluation-steps-list">
+              <div class="evaluation-step-row">
+                <span class="evaluation-step-badge" aria-hidden="true">01</span>
+                <div class="evaluation-step-body">
+                  <strong>Coordinator Briefing</strong>
+                  <p>We discuss your preferred destination countries, timeline, and language preferences.</p>
+                </div>
+              </div>
+              <div class="evaluation-step-row">
+                <span class="evaluation-step-badge" aria-hidden="true">02</span>
+                <div class="evaluation-step-body">
+                  <strong>Secure Record Transfer</strong>
+                  <p>We provide an encrypted hospital link so you can share recent diagnostic reports or imaging directly with the hospital desk.</p>
+                </div>
+              </div>
+              <div class="evaluation-step-row">
+                <span class="evaluation-step-badge" aria-hidden="true">03</span>
+                <div class="evaluation-step-body">
+                  <strong>Specialist Review</strong>
+                  <p>The hospital's clinical department reviews your documentation and advises whether an in-person evaluation or tele-consultation is appropriate.</p>
+                </div>
+              </div>
+            </div>
           </div>
           <div style="background: var(--bg-surface-alt); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: var(--space-8);">
             <span class="badge badge-teal" style="margin-bottom: var(--space-3);">Need Guidance Choosing a Destination?</span>

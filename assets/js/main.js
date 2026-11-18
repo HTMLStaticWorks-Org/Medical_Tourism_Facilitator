@@ -610,7 +610,7 @@
       grid.innerHTML = filtered
         .map(
           (t) => `
-        <article class="card" id="category-${t.id}">
+        <article class="card treatment-card" id="category-${t.id}">
           <div class="card-media">
             <img src="${t.image}" alt="${t.name}" loading="lazy">
             <div class="card-badges">
@@ -621,14 +621,14 @@
             <div class="card-meta">Medical Travel Specialty</div>
             <h3 class="card-title">${t.name}</h3>
             <p class="card-text">${t.shortIntro}</p>
-            <div style="margin-bottom: var(--space-4);">
-              <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 6px;">Common Procedures &amp; Services</div>
+            <div class="treatment-procedures-block">
+              <div class="treatment-sub-heading">Common Procedures &amp; Services</div>
               <ul class="procedure-list" style="margin-bottom: 0;">
                 ${t.commonProcedures.map((p) => `<li>${p}</li>`).join('')}
               </ul>
             </div>
-            <div style="margin-bottom: var(--space-4);">
-              <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 6px;">Related Specialties</div>
+            <div class="treatment-specialties-block">
+              <div class="treatment-sub-heading">Related Specialties</div>
               <div class="tag-list" style="margin-bottom: 0;">
                 ${t.relatedSpecialties.map((s) => `<span class="tag">${s}</span>`).join('')}
               </div>
@@ -1021,6 +1021,42 @@
   }
 
   /* ------------------------------------------------------------------------
+     9. GLOBAL BACK TO TOP BUTTON (ALL PAGES)
+     ------------------------------------------------------------------------ */
+  function initBackToTop() {
+    let btn = document.getElementById('back-to-top');
+    if (!btn) {
+      btn = document.createElement('button');
+      btn.type = 'button';
+      btn.id = 'back-to-top';
+      btn.className = 'back-to-top';
+      btn.setAttribute('aria-label', 'Back to top');
+      btn.setAttribute('title', 'Back to top');
+      btn.innerHTML = `
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M18 15l-6-6-6 6"/>
+        </svg>
+      `;
+      document.body.appendChild(btn);
+    }
+
+    const toggleVisibility = () => {
+      if (window.scrollY > 260) {
+        btn.classList.add('is-visible');
+      } else {
+        btn.classList.remove('is-visible');
+      }
+    };
+
+    window.addEventListener('scroll', toggleVisibility, { passive: true });
+    toggleVisibility();
+
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  /* ------------------------------------------------------------------------
      INITIALIZE ALL MODULES ON DOM READY
      ------------------------------------------------------------------------ */
   document.addEventListener('DOMContentLoaded', () => {
@@ -1033,6 +1069,7 @@
     initTreatmentFilters();
     initFaqAccordions();
     initForms();
+    initBackToTop();
   });
 })();
 
