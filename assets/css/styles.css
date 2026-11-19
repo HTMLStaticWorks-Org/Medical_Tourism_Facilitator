@@ -1314,12 +1314,13 @@ h4,
   }
 }
 
-/* Inner Page Hero Banner - Uniform height across all non-home pages */
+/* Inner Page Hero Banner - Exact uniform height across all non-home pages */
 .page-hero {
   background-color: var(--color-navy-900);
   color: #FFFFFF;
-  padding-block: var(--space-12);
-  min-height: 360px;
+  padding-block: var(--space-8);
+  height: 320px;
+  min-height: 320px;
   display: flex;
   align-items: center;
   position: relative;
@@ -1329,14 +1330,16 @@ h4,
 
 @media (max-width: 1024px) {
   .page-hero {
+    height: 320px;
     min-height: 320px;
-    padding-block: var(--space-10);
+    padding-block: var(--space-8);
   }
 }
 
 @media (max-width: 640px) {
   .page-hero {
-    min-height: 290px;
+    height: auto;
+    min-height: 380px;
     padding-block: var(--space-8);
   }
 }
@@ -1354,19 +1357,23 @@ h4,
 .page-hero-inner {
   position: relative;
   z-index: 2;
-  max-width: 820px;
+  max-width: 920px;
   width: 100%;
 }
 
 .page-hero h1 {
   color: #FFFFFF;
+  font-size: clamp(1.65rem, 2.3vw + 0.5rem, 2.35rem);
+  line-height: 1.22;
   margin-bottom: var(--space-3);
 }
 
 .page-hero p {
   color: #CBD5E1;
-  font-size: 1.05rem;
-  line-height: 1.65;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 780px;
+  margin: 0;
 }
 
 .breadcrumb {
@@ -2003,21 +2010,44 @@ h4,
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--space-4);
+  align-items: stretch;
+}
+
+.form-row-2 .form-group {
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.form-row-2 .form-label {
+  flex: 1;
+  align-items: flex-end;
 }
 
 @media (max-width: 640px) {
   .form-row-2 {
     grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .form-row-2 .form-group {
+    height: auto;
+  }
+
+  .form-row-2 .form-label {
+    flex: 0 0 auto;
+    align-items: center;
   }
 }
 
 .form-label {
   font-size: 0.85rem;
   font-weight: 600;
+  line-height: 1.35;
   color: var(--text-primary);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 3px;
 }
 
 .required-star {
@@ -2029,11 +2059,17 @@ h4,
   width: 100%;
   padding: 0.72rem 0.95rem;
   font-size: 0.94rem;
+  line-height: 1.4;
   background-color: var(--bg-surface);
   color: var(--text-primary);
   border: 1px solid var(--border-strong);
   border-radius: var(--radius-sm);
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+input.form-control,
+select.form-control {
+  min-height: 46px;
 }
 
 .form-control:focus {
@@ -3600,7 +3636,20 @@ h4,
   }
 }
 
-/* Contact Page Social & Enquiry Form Spacing */
+/* Contact Page Layout, Social & Enquiry Form Spacing */
+.contact-layout-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.85fr);
+  align-items: start;
+  gap: var(--space-10);
+}
+
+.contact-sidebar-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
 .contact-enquiry-card {
   padding: var(--space-8);
 }
@@ -3609,6 +3658,32 @@ h4,
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--space-3);
+}
+
+@media (max-width: 1024px) {
+  .contact-layout-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-8);
+  }
+
+  .contact-enquiry-card {
+    padding: var(--space-6);
+  }
+}
+
+@media (min-width: 681px) and (max-width: 1024px) {
+  .contact-sidebar-stack {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-6);
+  }
+
+  .contact-sidebar-stack > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 100%;
+    max-width: calc(50% - (var(--space-6) / 2));
+  }
 }
 
 @media (max-width: 640px) {
